@@ -1,0 +1,77 @@
+diff --git a/device/ktc_8g/ktc_8g/device.mk b/device/ktc_8g/ktc_8g/device.mk
+index 54f24e553f..2bd7a1ac9c 100755
+--- a/device/ktc_8g/ktc_8g/device.mk
++++ b/device/ktc_8g/ktc_8g/device.mk
+@@ -148,6 +148,7 @@ PRODUCT_PACKAGES += \
+ 	MTvFactoryMenu \
+ 	MTvSoftInfo \
+ 	Miracast \
++	Hello \
+ #    DMP \
+     DMS
+ 
+diff --git a/device/ktc_8g/ktc_8g/init.mainz.rc b/device/ktc_8g/ktc_8g/init.mainz.rc
+index 6e2e09d181..9768395d79 100755
+--- a/device/ktc_8g/ktc_8g/init.mainz.rc
++++ b/device/ktc_8g/ktc_8g/init.mainz.rc
+@@ -57,7 +57,7 @@ on post-fs
+     #insmod /system/lib/modules/ntfs-3g.ko
+     # insert mali driver
+     insmod /system/lib/modules/mali.ko
+-
++    insmod /system/lib/modules/hello.ko
+     # enable ksm
+     #write /sys/kernel/mm/ksm/pages_to_scan 100
+     #write /sys/kernel/mm/ksm/sleep_millisecs 500
+diff --git a/device/ktc_8g/ktc_8g/preinstall/preinstall.mk b/device/ktc_8g/ktc_8g/preinstall/preinstall.mk
+index 259a5585a4..f4ce5de444 100755
+--- a/device/ktc_8g/ktc_8g/preinstall/preinstall.mk
++++ b/device/ktc_8g/ktc_8g/preinstall/preinstall.mk
+@@ -115,7 +115,8 @@ PRODUCT_COPY_FILES += \
+ 
+ # XC
+ PRODUCT_COPY_FILES += \
+-    $(LOCAL_PATH)/modules/mdrv-xc.ko:system/lib/modules/mdrv-xc.ko
++    $(LOCAL_PATH)/modules/mdrv-xc.ko:system/lib/modules/mdrv-xc.ko \
++    $(LOCAL_PATH)/modules/hello.ko:system/lib/modules/hello.ko
+ 
+ # IR
+ PRODUCT_COPY_FILES += \
+diff --git a/device/ktc_8g/yangmei/device.mk b/device/ktc_8g/yangmei/device.mk
+index 54f92d1b69..dc40dfb646 100755
+--- a/device/ktc_8g/yangmei/device.mk
++++ b/device/ktc_8g/yangmei/device.mk
+@@ -127,6 +127,7 @@ PRODUCT_PACKAGES += \
+     MLocalMM2 \
+     MMCastDemo \
+     Launcher3 \
++	Hello \
+ #    DMP \
+     DMS
+ 
+diff --git a/device/ktc_8g/yangmei/init.mainz.rc b/device/ktc_8g/yangmei/init.mainz.rc
+index a5c07249f1..5d4f4a5ef1 100755
+--- a/device/ktc_8g/yangmei/init.mainz.rc
++++ b/device/ktc_8g/yangmei/init.mainz.rc
+@@ -55,6 +55,7 @@ on post-fs
+     # insert ir driver
+     insmod /system/lib/modules/rc-keymap-tv.ko
+     insmod /system/lib/modules/mdrv-ir.ko
++    insmod /system/lib/modules/hello.ko
+ 	
+ 	# insert ntfs driver
+     #insmod /system/lib/modules/ntfs-3g.ko
+diff --git a/device/ktc_8g/yangmei/preinstall/preinstall.mk b/device/ktc_8g/yangmei/preinstall/preinstall.mk
+index 4aaf67522f..b8eca832fb 100755
+--- a/device/ktc_8g/yangmei/preinstall/preinstall.mk
++++ b/device/ktc_8g/yangmei/preinstall/preinstall.mk
+@@ -114,7 +114,8 @@ PRODUCT_COPY_FILES += \
+ 
+ # XC
+ PRODUCT_COPY_FILES += \
+-    $(LOCAL_PATH)/modules/mdrv-xc.ko:system/lib/modules/mdrv-xc.ko
++    $(LOCAL_PATH)/modules/mdrv-xc.ko:system/lib/modules/mdrv-xc.ko \
++    $(LOCAL_PATH)/modules/hello.ko:system/lib/modules/hello.ko
+ 
+ # UtopiaXP
+ #PRODUCT_COPY_FILES += \

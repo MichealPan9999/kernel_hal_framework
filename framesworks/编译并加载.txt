@@ -1,0 +1,249 @@
+diff --git a/frameworks/base/Android.mk b/frameworks/base/Android.mk
+index b6aefa8677..de352f52b0 100644
+--- a/frameworks/base/Android.mk
++++ b/frameworks/base/Android.mk
+@@ -216,6 +216,7 @@ LOCAL_SRC_FILES += \
+ 	core/java/android/os/IUpdateLock.aidl \
+ 	core/java/android/os/IUserManager.aidl \
+ 	core/java/android/os/IVibratorService.aidl \
++        core/java/android/os/IHelloService.aidl \
+ 	core/java/android/security/IKeystoreService.aidl \
+ 	core/java/android/service/carrier/ICarrierService.aidl \
+ 	core/java/android/service/carrier/ICarrierMessagingCallback.aidl \
+diff --git a/frameworks/base/api/current.txt b/frameworks/base/api/current.txt
+index fd673facfe..8e1ff460e6 100755
+--- a/frameworks/base/api/current.txt
++++ b/frameworks/base/api/current.txt
+@@ -8121,17 +8121,14 @@ package android.content {
+     field public static final java.lang.String ACTION_EXTERNAL_APPLICATIONS_AVAILABLE = "android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE";
+     field public static final java.lang.String ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE = "android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE";
+     field public static final java.lang.String ACTION_FACTORY_TEST = "android.intent.action.FACTORY_TEST";
+-    field public static final java.lang.String ACTION_KEY_YOUTUBE = "android.intent.action.YOUTUBE";
+-    field public static final java.lang.String ACTION_KEY_ZEASN = "android.intent.action.ZEASN";
+-    field public static final java.lang.String ACTION_KEY_BOOMPLAY = "android.intent.action.BOOMPLAY";
+     field public static final java.lang.String ACTION_GET_CONTENT = "android.intent.action.GET_CONTENT";
+     field public static final java.lang.String ACTION_GET_RESTRICTION_ENTRIES = "android.intent.action.GET_RESTRICTION_ENTRIES";
+     field public static final java.lang.String ACTION_GOTO_ATV_BUTTON = "com.mstar.android.intent.action.GOTO_ATV_BUTTON";
+     field public static final java.lang.String ACTION_GOTO_AV_BUTTON = "com.mstar.android.intent.action.GOTO_AV_BUTTON";
+     field public static final java.lang.String ACTION_GOTO_DTV_BUTTON = "com.mstar.android.intent.action.GOTO_DTV_BUTTON";
+     field public static final java.lang.String ACTION_GOTO_HDMI_BUTTON = "com.mstar.android.intent.action.GOTO_HDMI_BUTTON";
+-    field public static final java.lang.String ACTION_GOTO_SHOWNETWORK_BUTTON = "com.mstar.android.intent.action.GOTO_SHOWNETWORK_BUTTON";
+     field public static final java.lang.String ACTION_GOTO_NETFLIX_BUTTON = "com.mstar.android.intent.action.GOTO_NETFLIX_BUTTON";
++    field public static final java.lang.String ACTION_GOTO_SHOWNETWORK_BUTTON = "com.mstar.android.intent.action.GOTO_SHOWNETWORK_BUTTON";
+     field public static final java.lang.String ACTION_GOTO_USB_BUTTON = "com.mstar.android.intent.action.GOTO_USB_BUTTON";
+     field public static final java.lang.String ACTION_GOTO_VGA_BUTTON = "com.mstar.android.intent.action.GOTO_VGA_BUTTON";
+     field public static final java.lang.String ACTION_GOTO_YPBPR_BUTTON = "com.mstar.android.intent.action.GOTO_YPBPR_BUTTON";
+@@ -8142,6 +8139,9 @@ package android.content {
+     field public static final java.lang.String ACTION_INSERT = "android.intent.action.INSERT";
+     field public static final java.lang.String ACTION_INSERT_OR_EDIT = "android.intent.action.INSERT_OR_EDIT";
+     field public static final java.lang.String ACTION_INSTALL_PACKAGE = "android.intent.action.INSTALL_PACKAGE";
++    field public static final java.lang.String ACTION_KEY_BOOMPLAY = "android.intent.action.BOOMPLAY";
++    field public static final java.lang.String ACTION_KEY_YOUTUBE = "android.intent.action.YOUTUBE";
++    field public static final java.lang.String ACTION_KEY_ZEASN = "android.intent.action.ZEASN";
+     field public static final java.lang.String ACTION_LOCALE_CHANGED = "android.intent.action.LOCALE_CHANGED";
+     field public static final java.lang.String ACTION_MAIN = "android.intent.action.MAIN";
+     field public static final java.lang.String ACTION_MANAGED_PROFILE_ADDED = "android.intent.action.MANAGED_PROFILE_ADDED";
+@@ -23074,6 +23074,11 @@ package android.os {
+     method public boolean quitSafely();
+   }
+ 
++  public class HelloService extends android.os.IHelloService.Stub {
++    method public int getVal();
++    method public void setVal(int);
++  }
++
+   public abstract interface IBinder {
+     method public abstract void dump(java.io.FileDescriptor, java.lang.String[]) throws android.os.RemoteException;
+     method public abstract void dumpAsync(java.io.FileDescriptor, java.lang.String[]) throws android.os.RemoteException;
+@@ -23098,6 +23103,18 @@ package android.os {
+     method public abstract void binderDied();
+   }
+ 
++  public abstract interface IHelloService implements android.os.IInterface {
++    method public abstract int getVal() throws android.os.RemoteException;
++    method public abstract void setVal(int) throws android.os.RemoteException;
++  }
++
++  public static abstract class IHelloService.Stub extends android.os.Binder implements android.os.IHelloService {
++    ctor public IHelloService.Stub();
++    method public android.os.IBinder asBinder();
++    method public static android.os.IHelloService asInterface(android.os.IBinder);
++    method public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int) throws android.os.RemoteException;
++  }
++
+   public abstract interface IInterface {
+     method public abstract android.os.IBinder asBinder();
+   }
+@@ -35048,6 +35065,7 @@ package android.view {
+     field public static final int KEYCODE_BACK = 4; // 0x4
+     field public static final int KEYCODE_BACKSLASH = 73; // 0x49
+     field public static final int KEYCODE_BOOKMARK = 174; // 0xae
++    field public static final int KEYCODE_BOOMPLAY = 313; // 0x139
+     field public static final int KEYCODE_BREAK = 121; // 0x79
+     field public static final int KEYCODE_BRIGHTNESS_DOWN = 220; // 0xdc
+     field public static final int KEYCODE_BRIGHTNESS_UP = 221; // 0xdd
+@@ -35199,9 +35217,8 @@ package android.view {
+     field public static final int KEYCODE_META_RIGHT = 118; // 0x76
+     field public static final int KEYCODE_MINUS = 69; // 0x45
+     field public static final int KEYCODE_MOUSE = 308; // 0x134
+-    
+-    field public static final int KEYCODE_MOUSE_ENTER = 1103; // 
+-    field public static final int KEYCODE_MOUSE_EXIT = 1102; // 
++    field public static final int KEYCODE_MOUSE_ENTER = 1103; // 0x44f
++    field public static final int KEYCODE_MOUSE_EXIT = 1102; // 0x44e
+     field public static final int KEYCODE_MOVE_END = 123; // 0x7b
+     field public static final int KEYCODE_MOVE_HOME = 122; // 0x7a
+     field public static final int KEYCODE_MUHENKAN = 213; // 0xd5
+@@ -35320,9 +35337,8 @@ package android.view {
+     field public static final int KEYCODE_Y = 53; // 0x35
+     field public static final int KEYCODE_YEN = 216; // 0xd8
+     field public static final int KEYCODE_YOUTUBE = 311; // 0x137
+-    field public static final int KEYCODE_ZEASN = 312; // 0x137
+-    field public static final int KEYCODE_BOOMPLAY = 313; // 0x137
+     field public static final int KEYCODE_Z = 54; // 0x36
++    field public static final int KEYCODE_ZEASN = 312; // 0x138
+     field public static final int KEYCODE_ZENKAKU_HANKAKU = 211; // 0xd3
+     field public static final int KEYCODE_ZOOM_IN = 168; // 0xa8
+     field public static final int KEYCODE_ZOOM_OUT = 169; // 0xa9
+diff --git a/frameworks/base/api/system-current.txt b/frameworks/base/api/system-current.txt
+index e4d8ce4f9b..78f843d9da 100755
+--- a/frameworks/base/api/system-current.txt
++++ b/frameworks/base/api/system-current.txt
+@@ -8373,16 +8373,13 @@ package android.content {
+     field public static final java.lang.String ACTION_EXTERNAL_APPLICATIONS_AVAILABLE = "android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE";
+     field public static final java.lang.String ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE = "android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE";
+     field public static final java.lang.String ACTION_FACTORY_TEST = "android.intent.action.FACTORY_TEST";
+-    field public static final java.lang.String ACTION_KEY_YOUTUBE = "android.intent.action.YOUTUBE";
+-    field public static final java.lang.String ACTION_KEY_ZEASN = "android.intent.action.ZEASN";
+-    field public static final java.lang.String ACTION_KEY_BOOMPLAY = "android.intent.action.BOOMPLAY";
+     field public static final java.lang.String ACTION_GET_CONTENT = "android.intent.action.GET_CONTENT";
+     field public static final java.lang.String ACTION_GET_RESTRICTION_ENTRIES = "android.intent.action.GET_RESTRICTION_ENTRIES";
+     field public static final java.lang.String ACTION_GOTO_ATV_BUTTON = "com.mstar.android.intent.action.GOTO_ATV_BUTTON";
+     field public static final java.lang.String ACTION_GOTO_AV_BUTTON = "com.mstar.android.intent.action.GOTO_AV_BUTTON";
+-    field public static final java.lang.String ACTION_GOTO_NETFLIX_BUTTON = "com.mstar.android.intent.action.GOTO_NETFLIX_BUTTON";
+     field public static final java.lang.String ACTION_GOTO_DTV_BUTTON = "com.mstar.android.intent.action.GOTO_DTV_BUTTON";
+     field public static final java.lang.String ACTION_GOTO_HDMI_BUTTON = "com.mstar.android.intent.action.GOTO_HDMI_BUTTON";
++    field public static final java.lang.String ACTION_GOTO_NETFLIX_BUTTON = "com.mstar.android.intent.action.GOTO_NETFLIX_BUTTON";
+     field public static final java.lang.String ACTION_GOTO_SHOWNETWORK_BUTTON = "com.mstar.android.intent.action.GOTO_SHOWNETWORK_BUTTON";
+     field public static final java.lang.String ACTION_GOTO_USB_BUTTON = "com.mstar.android.intent.action.GOTO_USB_BUTTON";
+     field public static final java.lang.String ACTION_GOTO_VGA_BUTTON = "com.mstar.android.intent.action.GOTO_VGA_BUTTON";
+@@ -8395,6 +8392,9 @@ package android.content {
+     field public static final java.lang.String ACTION_INSERT_OR_EDIT = "android.intent.action.INSERT_OR_EDIT";
+     field public static final java.lang.String ACTION_INSTALL_PACKAGE = "android.intent.action.INSTALL_PACKAGE";
+     field public static final java.lang.String ACTION_INTENT_FILTER_NEEDS_VERIFICATION = "android.intent.action.INTENT_FILTER_NEEDS_VERIFICATION";
++    field public static final java.lang.String ACTION_KEY_BOOMPLAY = "android.intent.action.BOOMPLAY";
++    field public static final java.lang.String ACTION_KEY_YOUTUBE = "android.intent.action.YOUTUBE";
++    field public static final java.lang.String ACTION_KEY_ZEASN = "android.intent.action.ZEASN";
+     field public static final java.lang.String ACTION_LOCALE_CHANGED = "android.intent.action.LOCALE_CHANGED";
+     field public static final java.lang.String ACTION_MAIN = "android.intent.action.MAIN";
+     field public static final java.lang.String ACTION_MANAGED_PROFILE_ADDED = "android.intent.action.MANAGED_PROFILE_ADDED";
+@@ -25019,6 +25019,11 @@ package android.os {
+     method public boolean quitSafely();
+   }
+ 
++  public class HelloService extends android.os.IHelloService.Stub {
++    method public int getVal();
++    method public void setVal(int);
++  }
++
+   public abstract interface IBinder {
+     method public abstract void dump(java.io.FileDescriptor, java.lang.String[]) throws android.os.RemoteException;
+     method public abstract void dumpAsync(java.io.FileDescriptor, java.lang.String[]) throws android.os.RemoteException;
+@@ -25043,6 +25048,18 @@ package android.os {
+     method public abstract void binderDied();
+   }
+ 
++  public abstract interface IHelloService implements android.os.IInterface {
++    method public abstract int getVal() throws android.os.RemoteException;
++    method public abstract void setVal(int) throws android.os.RemoteException;
++  }
++
++  public static abstract class IHelloService.Stub extends android.os.Binder implements android.os.IHelloService {
++    ctor public IHelloService.Stub();
++    method public android.os.IBinder asBinder();
++    method public static android.os.IHelloService asInterface(android.os.IBinder);
++    method public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int) throws android.os.RemoteException;
++  }
++
+   public abstract interface IInterface {
+     method public abstract android.os.IBinder asBinder();
+   }
+@@ -37341,6 +37358,7 @@ package android.view {
+     field public static final int KEYCODE_BACK = 4; // 0x4
+     field public static final int KEYCODE_BACKSLASH = 73; // 0x49
+     field public static final int KEYCODE_BOOKMARK = 174; // 0xae
++    field public static final int KEYCODE_BOOMPLAY = 313; // 0x139
+     field public static final int KEYCODE_BREAK = 121; // 0x79
+     field public static final int KEYCODE_BRIGHTNESS_DOWN = 220; // 0xdc
+     field public static final int KEYCODE_BRIGHTNESS_UP = 221; // 0xdd
+@@ -37491,9 +37509,9 @@ package android.view {
+     field public static final int KEYCODE_META_LEFT = 117; // 0x75
+     field public static final int KEYCODE_META_RIGHT = 118; // 0x76
+     field public static final int KEYCODE_MINUS = 69; // 0x45
+-    field public static final int KEYCODE_MOUSE_ENTER = 1103; // 
+-    field public static final int KEYCODE_MOUSE_EXIT = 1102; // 
+     field public static final int KEYCODE_MOUSE = 308; // 0x134
++    field public static final int KEYCODE_MOUSE_ENTER = 1103; // 0x44f
++    field public static final int KEYCODE_MOUSE_EXIT = 1102; // 0x44e
+     field public static final int KEYCODE_MOVE_END = 123; // 0x7b
+     field public static final int KEYCODE_MOVE_HOME = 122; // 0x7a
+     field public static final int KEYCODE_MUHENKAN = 213; // 0xd5
+@@ -37612,9 +37630,8 @@ package android.view {
+     field public static final int KEYCODE_Y = 53; // 0x35
+     field public static final int KEYCODE_YEN = 216; // 0xd8
+     field public static final int KEYCODE_YOUTUBE = 311; // 0x137
+-    field public static final int KEYCODE_ZEASN = 312; // 0x137
+-    field public static final int KEYCODE_BOOMPLAY = 313; // 0x137
+     field public static final int KEYCODE_Z = 54; // 0x36
++    field public static final int KEYCODE_ZEASN = 312; // 0x138
+     field public static final int KEYCODE_ZENKAKU_HANKAKU = 211; // 0xd3
+     field public static final int KEYCODE_ZOOM_IN = 168; // 0xa8
+     field public static final int KEYCODE_ZOOM_OUT = 169; // 0xa9
+diff --git a/frameworks/base/core/java/android/os/SystemService.java b/frameworks/base/core/java/android/os/SystemService.java
+index 41e7546784..9d13e71cff 100644
+--- a/frameworks/base/core/java/android/os/SystemService.java
++++ b/frameworks/base/core/java/android/os/SystemService.java
+@@ -52,6 +52,11 @@ public class SystemService {
+             public void run() {
+                 synchronized (sPropertyLock) {
+                     sPropertyLock.notifyAll();
++
++			try {
++				ServiceManager.addService("hello", new HelloService());
++			} catch (Throwable e) {
++			}
+                 }
+             }
+         });
+diff --git a/frameworks/base/services/core/jni/Android.mk b/frameworks/base/services/core/jni/Android.mk
+index 75c9af445c..fe7e5a745d 100644
+--- a/frameworks/base/services/core/jni/Android.mk
++++ b/frameworks/base/services/core/jni/Android.mk
+@@ -25,6 +25,7 @@ LOCAL_SRC_FILES += \
+     $(LOCAL_REL_DIR)/com_android_server_UsbMidiDevice.cpp \
+     $(LOCAL_REL_DIR)/com_android_server_UsbHostManager.cpp \
+     $(LOCAL_REL_DIR)/com_android_server_VibratorService.cpp \
++    $(LOCAL_REL_DIR)/com_android_server_HelloService.cpp \
+     $(LOCAL_REL_DIR)/com_android_server_PersistentDataBlockService.cpp \
+     $(LOCAL_REL_DIR)/onload.cpp
+ 
+diff --git a/frameworks/base/services/core/jni/onload.cpp b/frameworks/base/services/core/jni/onload.cpp
+index 67872da3a3..e22f79a2ff 100644
+--- a/frameworks/base/services/core/jni/onload.cpp
++++ b/frameworks/base/services/core/jni/onload.cpp
+@@ -35,6 +35,7 @@ int register_android_server_UsbDeviceManager(JNIEnv* env);
+ int register_android_server_UsbMidiDevice(JNIEnv* env);
+ int register_android_server_UsbHostManager(JNIEnv* env);
+ int register_android_server_VibratorService(JNIEnv* env);
++int register_android_server_HelloService(JNIEnv* env);
+ int register_android_server_location_GpsLocationProvider(JNIEnv* env);
+ int register_android_server_location_FlpHardwareProvider(JNIEnv* env);
+ int register_android_server_connectivity_Vpn(JNIEnv* env);
+@@ -68,6 +69,7 @@ extern "C" jint JNI_OnLoad(JavaVM* vm, void* /* reserved */)
+     register_android_server_UsbMidiDevice(env);
+     register_android_server_UsbHostManager(env);
+     register_android_server_VibratorService(env);
++    register_android_server_HelloService(env);
+     register_android_server_SystemServer(env);
+     register_android_server_location_GpsLocationProvider(env);
+     register_android_server_location_FlpHardwareProvider(env);

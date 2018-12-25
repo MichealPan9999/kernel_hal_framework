@@ -1,0 +1,7 @@
+config HELLO  
+
+   tristate "Hello World for fengyuwuzu"  
+
+   help  
+
+     Hello  forfengyuwuzu  

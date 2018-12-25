@@ -1,0 +1,743 @@
+
+api/system-removed.txt:49:  public final class PowerManager {
+api/removed.txt:49:  public final class PowerManager {
+api/current.txt:23427:  public final class PowerManager {
+api/current.txt:23434:    method public android.os.PowerManager.WakeLock newWakeLock(int, java.lang.String);
+api/current.txt:23448:  public final class PowerManager.WakeLock {
+api/system-current.txt:25372:  public final class PowerManager {
+api/system-current.txt:25380:    method public android.os.PowerManager.WakeLock newWakeLock(int, java.lang.String);
+api/system-current.txt:25401:  public final class PowerManager.WakeLock {
+cmds/uiautomator/instrumentation/testrunner-src/com/android/uiautomator/core/InstrumentationUiAutomatorBridge.java:22:import android.os.PowerManager;
+cmds/uiautomator/instrumentation/testrunner-src/com/android/uiautomator/core/InstrumentationUiAutomatorBridge.java:52:        PowerManager pm = (PowerManager)
+core/java/android/net/DhcpStateMachine.java:32:import android.os.PowerManager;
+core/java/android/net/DhcpStateMachine.java:63:    private PowerManager.WakeLock mDhcpRenewWakeLock;
+core/java/android/net/DhcpStateMachine.java:122:        PowerManager powerManager = (PowerManager)mContext.getSystemService(Context.POWER_SERVICE);
+core/java/android/net/DhcpStateMachine.java:123:        mDhcpRenewWakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, WAKELOCK_TAG);
+core/java/android/content/Intent.java:1813:     * See {@link android.os.PowerManager#isInteractive} for details.
+core/java/android/content/Intent.java:1837:     * See {@link android.os.PowerManager#isInteractive} for details.
+core/java/android/content/Context.java:2420:     *  <dd> A {@link android.os.PowerManager} for controlling power
+core/java/android/content/Context.java:2479:     * @see android.os.PowerManager
+core/java/android/content/Context.java:2530:     * {@link android.app.ActivityManager}, {@link android.os.PowerManager},
+core/java/android/content/Context.java:2571:     * {@link android.os.PowerManager} for controlling power management,
+core/java/android/provider/Settings.java:623:     * You can use {@link android.os.PowerManager#isIgnoringBatteryOptimizations
+core/java/android/provider/Settings.java:624:     * PowerManager.isIgnoringBatteryOptimizations()} to determine if an application is
+core/java/android/provider/Settings.java:650:     * You can use {@link android.os.PowerManager#isIgnoringBatteryOptimizations
+core/java/android/provider/Settings.java:651:     * PowerManager.isIgnoringBatteryOptimizations()} to determine if an application is
+core/java/android/os/PowerManager.java:36: * This will create a {@link PowerManager.WakeLock} object.  You can then use methods
+core/java/android/os/PowerManager.java:41: * PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+core/java/android/os/PowerManager.java:42: * PowerManager.WakeLock wl = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK, "My Tag");
+core/java/android/os/PowerManager.java:102:public final class PowerManager {
+core/java/android/os/PowerManager.java:103:    private static final String TAG = "PowerManager";
+core/java/android/os/PowerManager.java:285:    // Note: Be sure to update android.os.BatteryStats and PowerManager.h
+core/java/android/os/PowerManager.java:400:    public PowerManager(Context context, IPowerManager service, Handler handler) {
+core/java/android/os/PowerManager.java:465:     * PowerManager pm = (PowerManager)mContext.getSystemService(
+core/java/android/os/PowerManager.java:467:     * PowerManager.WakeLock wl = pm.newWakeLock(
+core/java/android/os/PowerManager.java:468:     *                                      PowerManager.SCREEN_DIM_WAKE_LOCK
+core/java/android/os/PowerManager.java:469:     *                                      | PowerManager.ON_AFTER_RELEASE,
+core/java/android/os/PowerManager.java:1001:     * Obtain a wake lock by calling {@link PowerManager#newWakeLock(int, String)}.
+core/java/android/os/BatteryStats.java:430:         * Note that these must match the constants in android.os.PowerManager.
+core/java/android/os/RecoverySystem.java:510:        PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+core/java/android/os/RecoverySystem.java:511:        pm.reboot(PowerManager.REBOOT_RECOVERY);
+core/java/android/os/PowerManagerInternal.java:73:     * as defined by {@link android.os.PowerManager#isInteractive}.
+core/java/android/os/PowerManagerInternal.java:123:     * {@link PowerManager#BRIGHTNESS_DEFAULT} to disable the override.
+core/java/android/app/SystemServiceRegistry.java:91:import android.os.PowerManager;
+core/java/android/app/SystemServiceRegistry.java:366:        registerService(Context.POWER_SERVICE, PowerManager.class,
+core/java/android/app/SystemServiceRegistry.java:367:                new CachedServiceFetcher<PowerManager>() {
+core/java/android/app/SystemServiceRegistry.java:369:            public PowerManager createService(ContextImpl ctx) {
+core/java/android/app/SystemServiceRegistry.java:375:                return new PowerManager(ctx.getOuterContext(),
+core/java/android/hardware/display/DisplayManagerInternal.java:21:import android.os.PowerManager;
+core/java/android/hardware/display/DisplayManagerInternal.java:217:            screenBrightness = PowerManager.BRIGHTNESS_ON;
+core/java/android/hardware/display/DisplayManagerInternal.java:221:            dozeScreenBrightness = PowerManager.BRIGHTNESS_DEFAULT;
+core/java/android/hardware/location/GeofenceHardwareImpl.java:28:import android.os.PowerManager;
+core/java/android/hardware/location/GeofenceHardwareImpl.java:48:    private PowerManager.WakeLock mWakeLock;
+core/java/android/hardware/location/GeofenceHardwareImpl.java:118:            PowerManager powerManager =
+core/java/android/hardware/location/GeofenceHardwareImpl.java:119:                    (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+core/java/android/hardware/location/GeofenceHardwareImpl.java:120:            mWakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
+core/java/android/service/dreams/Sandman.java:22:import android.os.PowerManager;
+core/java/android/service/dreams/Sandman.java:93:                    PowerManager powerManager =
+core/java/android/service/dreams/Sandman.java:94:                            (PowerManager)context.getSystemService(Context.POWER_SERVICE);
+core/java/android/service/dreams/DreamService.java:33:import android.os.PowerManager;
+core/java/android/service/dreams/DreamService.java:190:    private int mDozeScreenBrightness = PowerManager.BRIGHTNESS_DEFAULT;
+core/java/android/service/dreams/DreamService.java:606:     * {@link android.os.PowerManager#PARTIAL_WAKE_LOCK partial wake lock} when necessary.
+core/java/android/service/dreams/DreamService.java:733:     * {@link PowerManager#BRIGHTNESS_OFF} (0) and {@link PowerManager#BRIGHTNESS_ON} (255),
+core/java/android/service/dreams/DreamService.java:734:     * or {@link PowerManager#BRIGHTNESS_DEFAULT} (-1) to ask the system to apply
+core/java/android/service/dreams/DreamService.java:749:     * {@link PowerManager#BRIGHTNESS_DEFAULT} which lets the system decide.
+core/java/android/service/dreams/DreamService.java:765:     * {@link PowerManager#BRIGHTNESS_OFF} (0) and {@link PowerManager#BRIGHTNESS_ON} (255),
+core/java/android/service/dreams/DreamService.java:766:     * or {@link PowerManager#BRIGHTNESS_DEFAULT} (-1) to ask the system to apply
+core/java/android/service/dreams/DreamService.java:772:        if (brightness != PowerManager.BRIGHTNESS_DEFAULT) {
+core/java/android/service/dreams/DreamService.java:1089:        return MathUtils.constrain(value, PowerManager.BRIGHTNESS_OFF, PowerManager.BRIGHTNESS_ON);
+core/java/android/view/Display.java:262:     * @see android.os.PowerManager#isInteractive
+core/java/android/view/Display.java:275:     * @see android.os.PowerManager#isInteractive
+core/res/AndroidManifest.xml:1122:    <!-- Allows using PowerManager WakeLocks to keep processor from sleeping or screen
+core/res/AndroidManifest.xml:2227:   <!-- Allows access to the PowerManager.userActivity function.
+core/res/res/values/config.xml:1545:         gone to sleep.  When the PowerManager is asked to go to sleep, it will instead
+core/tests/ConnectivityManagerTest/src/com/android/connectivitymanagertest/ConnectivityManagerTestBase.java:30:import android.os.PowerManager;
+core/tests/ConnectivityManagerTest/src/com/android/connectivitymanagertest/ConnectivityManagerTestBase.java:266:       PowerManager pm =
+core/tests/ConnectivityManagerTest/src/com/android/connectivitymanagertest/ConnectivityManagerTestBase.java:267:            (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+core/tests/ConnectivityManagerTest/src/com/android/connectivitymanagertest/ConnectivityManagerTestBase.java:274:       PowerManager pm =
+core/tests/ConnectivityManagerTest/src/com/android/connectivitymanagertest/ConnectivityManagerTestBase.java:275:                (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+core/tests/ConnectivityManagerTest/src/com/android/connectivitymanagertest/stress/WifiStressTest.java:29:import android.os.PowerManager;
+core/tests/ConnectivityManagerTest/src/com/android/connectivitymanagertest/stress/WifiStressTest.java:234:            PowerManager pm =
+core/tests/ConnectivityManagerTest/src/com/android/connectivitymanagertest/stress/WifiStressTest.java:235:                (PowerManager)mRunner.getContext().getSystemService(Context.POWER_SERVICE);
+core/tests/coretests/src/android/os/PowerManagerTest.java:25:    private PowerManager mPm;
+core/tests/coretests/src/android/os/PowerManagerTest.java:33:        mPm = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+core/tests/coretests/src/android/os/PowerManagerTest.java:53:        PowerManager.WakeLock wl = mPm.newWakeLock(PowerManager.FULL_WAKE_LOCK, "FULL_WAKE_LOCK");
+core/tests/coretests/src/android/os/PowerManagerTest.java:56:        wl = mPm.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, "SCREEN_BRIGHT_WAKE_LOCK");
+core/tests/coretests/src/android/os/PowerManagerTest.java:59:        wl = mPm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK, "SCREEN_DIM_WAKE_LOCK");
+core/tests/coretests/src/android/os/PowerManagerTest.java:62:        wl = mPm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "PARTIAL_WAKE_LOCK");
+core/tests/coretests/src/android/os/PowerManagerTest.java:79:        final int badFlags = PowerManager.SCREEN_BRIGHT_WAKE_LOCK 
+core/tests/coretests/src/android/os/PowerManagerTest.java:80:                            | PowerManager.SCREEN_DIM_WAKE_LOCK;
+core/tests/coretests/src/android/os/PowerManagerTest.java:83:            PowerManager.WakeLock wl = mPm.newWakeLock(badFlags, "foo");
+core/tests/coretests/src/android/os/PowerManagerTest.java:95:    private void doTestWakeLock(PowerManager.WakeLock wl) {
+docs/html/preview/features/power-mgmt.jd:44:<li>The system ignores <a href="{@docRoot}reference/android/os/PowerManager.WakeLock.html">
+docs/html/guide/topics/media/mediaplayer.jd:373:mMediaPlayer.setWakeMode(getApplicationContext(), PowerManager.PARTIAL_WAKE_LOCK);
+docs/html/sdk/api_diff/23/changes/pkg_android.os.html:176:  <A NAME="PowerManager"></A>
+docs/html/sdk/api_diff/23/changes/pkg_android.os.html:177:  <nobr><A HREF="android.os.PowerManager.html">PowerManager</A></nobr>
+docs/html/sdk/api_diff/23/changes/fields_index_additions.html:116:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.ACTION_DEVICE_IDLE_MODE_CHANGED" class="hiddenlink" target="rightframe">ACTION_DEVICE_IDLE_MODE_CHANGED</A>
+docs/html/sdk/api_diff/23/changes/fields_index_all.html:124:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.ACTION_DEVICE_IDLE_MODE_CHANGED" class="hiddenlink" target="rightframe">ACTION_DEVICE_IDLE_MODE_CHANGED</A>
+docs/html/sdk/api_diff/23/changes/jdiff_statistics.html:781:  <TD><A HREF="android.os.PowerManager.html">
+docs/html/sdk/api_diff/23/changes/jdiff_statistics.html:782:android.os.PowerManager</A></TD>
+docs/html/sdk/api_diff/23/changes/classes_index_all.html:695:<A HREF="android.os.PowerManager.html" class="hiddenlink" target="rightframe">PowerManager</A><br>
+docs/html/sdk/api_diff/23/changes/alldiffs_index_changes.html:1297:<!-- Class PowerManager -->
+docs/html/sdk/api_diff/23/changes/alldiffs_index_changes.html:1298:<A HREF="android.os.PowerManager.html" class="hiddenlink" target="rightframe">PowerManager</A><br>
+docs/html/sdk/api_diff/23/changes/methods_index_all.html:1048:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isDeviceIdleMode_added()" class="hiddenlink" target="rightframe"><b>isDeviceIdleMode</b>
+docs/html/sdk/api_diff/23/changes/methods_index_all.html:1058:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isIgnoringBatteryOptimizations_added(java.lang.String)" class="hiddenlink" target="rightframe"><b>isIgnoringBatteryOptimizations</b>
+docs/html/sdk/api_diff/23/changes/alldiffs_index_all.html:165:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.ACTION_DEVICE_IDLE_MODE_CHANGED" class="hiddenlink" target="rightframe">ACTION_DEVICE_IDLE_MODE_CHANGED</A>
+docs/html/sdk/api_diff/23/changes/alldiffs_index_all.html:2863:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isDeviceIdleMode_added()" class="hiddenlink" target="rightframe"><b>isDeviceIdleMode</b>
+docs/html/sdk/api_diff/23/changes/alldiffs_index_all.html:2878:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isIgnoringBatteryOptimizations_added(java.lang.String)" class="hiddenlink" target="rightframe"><b>isIgnoringBatteryOptimizations</b>
+docs/html/sdk/api_diff/23/changes/alldiffs_index_all.html:4105:<!-- Class PowerManager -->
+docs/html/sdk/api_diff/23/changes/alldiffs_index_all.html:4106:<A HREF="android.os.PowerManager.html" class="hiddenlink" target="rightframe">PowerManager</A><br>
+docs/html/sdk/api_diff/23/changes/methods_index_additions.html:857:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isDeviceIdleMode_added()" class="hiddenlink" target="rightframe"><b>isDeviceIdleMode</b>
+docs/html/sdk/api_diff/23/changes/methods_index_additions.html:867:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isIgnoringBatteryOptimizations_added(java.lang.String)" class="hiddenlink" target="rightframe"><b>isIgnoringBatteryOptimizations</b>
+docs/html/sdk/api_diff/23/changes/classes_index_changes.html:590:<A HREF="android.os.PowerManager.html" class="hiddenlink" target="rightframe">PowerManager</A><br>
+docs/html/sdk/api_diff/23/changes/android.os.PowerManager.html:10:android.os.PowerManager
+docs/html/sdk/api_diff/23/changes/android.os.PowerManager.html:74:Class android.os.<A HREF="../../../../reference/android/os/PowerManager.html" target="_top"><font size="+2"><code>PowerManager</code></font></A>
+docs/html/sdk/api_diff/23/changes/android.os.PowerManager.html:86:  <A NAME="android.os.PowerManager.isDeviceIdleMode_added()"></A>
+docs/html/sdk/api_diff/23/changes/android.os.PowerManager.html:87:  <nobr><code>boolean</code>&nbsp;<A HREF="../../../../reference/android/os/PowerManager.html#isDeviceIdleMode()" target="_top"><code>isDeviceIdleMode</code></A>()</nobr>
+docs/html/sdk/api_diff/23/changes/android.os.PowerManager.html:93:  <A NAME="android.os.PowerManager.isIgnoringBatteryOptimizations_added(java.lang.String)"></A>
+docs/html/sdk/api_diff/23/changes/android.os.PowerManager.html:94:  <nobr><code>boolean</code>&nbsp;<A HREF="../../../../reference/android/os/PowerManager.html#isIgnoringBatteryOptimizations(java.lang.String)" target="_top"><code>isIgnoringBatteryOptimizations</code></A>(<code>String</code>)</nobr>
+docs/html/sdk/api_diff/23/changes/android.os.PowerManager.html:109:  <A NAME="android.os.PowerManager.ACTION_DEVICE_IDLE_MODE_CHANGED"></A>
+docs/html/sdk/api_diff/23/changes/android.os.PowerManager.html:110:  <nobr><code>String</code>&nbsp;<A HREF="../../../../reference/android/os/PowerManager.html#ACTION_DEVICE_IDLE_MODE_CHANGED" target="_top"><code>ACTION_DEVICE_IDLE_MODE_CHANGED</code></A></nobr>
+docs/html/sdk/api_diff/23/changes/alldiffs_index_additions.html:137:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.ACTION_DEVICE_IDLE_MODE_CHANGED" class="hiddenlink" target="rightframe">ACTION_DEVICE_IDLE_MODE_CHANGED</A>
+docs/html/sdk/api_diff/23/changes/alldiffs_index_additions.html:1946:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isDeviceIdleMode_added()" class="hiddenlink" target="rightframe"><b>isDeviceIdleMode</b>
+docs/html/sdk/api_diff/23/changes/alldiffs_index_additions.html:1961:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isIgnoringBatteryOptimizations_added(java.lang.String)" class="hiddenlink" target="rightframe"><b>isIgnoringBatteryOptimizations</b>
+docs/html/sdk/api_diff/21/user_comments_for_20_to_21.xml:9145:  <identifier id="android.os.PowerManager"/>
+docs/html/sdk/api_diff/21/user_comments_for_20_to_21.xml:9151:  <identifier id="android.os.PowerManager.ACTION_POWER_SAVE_MODE_CHANGED"/>
+docs/html/sdk/api_diff/21/user_comments_for_20_to_21.xml:9157:  <identifier id="android.os.PowerManager.PROXIMITY_SCREEN_OFF_WAKE_LOCK"/>
+docs/html/sdk/api_diff/21/user_comments_for_20_to_21.xml:9163:  <identifier id="android.os.PowerManager.RELEASE_FLAG_WAIT_FOR_NO_PROXIMITY"/>
+docs/html/sdk/api_diff/21/user_comments_for_20_to_21.xml:9169:  <identifier id="android.os.PowerManager.WakeLock"/>
+docs/html/sdk/api_diff/21/user_comments_for_20_to_21.xml:9175:  <identifier id="android.os.PowerManager.WakeLock.release_added(int)"/>
+docs/html/sdk/api_diff/21/user_comments_for_20_to_21.xml:9181:  <identifier id="android.os.PowerManager.goToSleep_removed(long)"/>
+docs/html/sdk/api_diff/21/user_comments_for_20_to_21.xml:9187:  <identifier id="android.os.PowerManager.isPowerSaveMode_added()"/>
+docs/html/sdk/api_diff/21/user_comments_for_20_to_21.xml:9193:  <identifier id="android.os.PowerManager.isWakeLockLevelSupported_added(int)"/>
+docs/html/sdk/api_diff/21/user_comments_for_20_to_21.xml:9199:  <identifier id="android.os.PowerManager.userActivity_removed(long, boolean)"/>
+docs/html/sdk/api_diff/21/user_comments_for_20_to_21.xml:9205:  <identifier id="android.os.PowerManager.wakeUp_removed(long)"/>
+docs/html/sdk/api_diff/21/missingSinces.txt:663:NO DOC BLOCK: android.os.PowerManager Method isPowerSaveMode()
+docs/html/sdk/api_diff/21/missingSinces.txt:674:NO DOC BLOCK: android.os.PowerManager Method isWakeLockLevelSupported(int)
+docs/html/sdk/api_diff/21/missingSinces.txt:778:NO DOC BLOCK: android.os.PowerManager.WakeLock Method release(int)
+docs/html/sdk/api_diff/21/missingSinces.txt:1032:NO DOC BLOCK: android.os.PowerManager Field ACTION_POWER_SAVE_MODE_CHANGED
+docs/html/sdk/api_diff/21/missingSinces.txt:1754:NO DOC BLOCK: android.os.PowerManager Field PROXIMITY_SCREEN_OFF_WAKE_LOCK
+docs/html/sdk/api_diff/21/missingSinces.txt:1772:NO DOC BLOCK: android.os.PowerManager Field RELEASE_FLAG_WAIT_FOR_NO_PROXIMITY
+docs/html/sdk/api_diff/21/changes/pkg_android.os.html:162:  <A NAME="PowerManager"></A>
+docs/html/sdk/api_diff/21/changes/pkg_android.os.html:163:  <nobr><A HREF="android.os.PowerManager.html">PowerManager</A></nobr>
+docs/html/sdk/api_diff/21/changes/pkg_android.os.html:169:  <A NAME="PowerManager.WakeLock"></A>
+docs/html/sdk/api_diff/21/changes/pkg_android.os.html:170:  <nobr><A HREF="android.os.PowerManager.WakeLock.html">PowerManager.WakeLock</A></nobr>
+docs/html/sdk/api_diff/21/changes/fields_index_additions.html:110:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.ACTION_POWER_SAVE_MODE_CHANGED" class="hiddenlink" target="rightframe">ACTION_POWER_SAVE_MODE_CHANGED</A>
+docs/html/sdk/api_diff/21/changes/fields_index_additions.html:2243:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.PROXIMITY_SCREEN_OFF_WAKE_LOCK" class="hiddenlink" target="rightframe">PROXIMITY_SCREEN_OFF_WAKE_LOCK</A>
+docs/html/sdk/api_diff/21/changes/fields_index_additions.html:2335:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.RELEASE_FLAG_WAIT_FOR_NO_PROXIMITY" class="hiddenlink" target="rightframe">RELEASE_FLAG_WAIT_FOR_NO_PROXIMITY</A>
+docs/html/sdk/api_diff/21/changes/fields_index_all.html:114:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.ACTION_POWER_SAVE_MODE_CHANGED" class="hiddenlink" target="rightframe">ACTION_POWER_SAVE_MODE_CHANGED</A>
+docs/html/sdk/api_diff/21/changes/fields_index_all.html:2340:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.PROXIMITY_SCREEN_OFF_WAKE_LOCK" class="hiddenlink" target="rightframe">PROXIMITY_SCREEN_OFF_WAKE_LOCK</A>
+docs/html/sdk/api_diff/21/changes/fields_index_all.html:2438:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.RELEASE_FLAG_WAIT_FOR_NO_PROXIMITY" class="hiddenlink" target="rightframe">RELEASE_FLAG_WAIT_FOR_NO_PROXIMITY</A>
+docs/html/sdk/api_diff/21/changes/jdiff_statistics.html:631:  <TD><A HREF="android.os.PowerManager.html">
+docs/html/sdk/api_diff/21/changes/jdiff_statistics.html:632:android.os.PowerManager</A></TD>
+docs/html/sdk/api_diff/21/changes/jdiff_statistics.html:1321:  <TD><A HREF="android.os.PowerManager.WakeLock.html">
+docs/html/sdk/api_diff/21/changes/jdiff_statistics.html:1322:android.os.PowerManager.WakeLock</A></TD>
+docs/html/sdk/api_diff/21/changes/classes_index_all.html:779:<A HREF="android.os.PowerManager.html" class="hiddenlink" target="rightframe">PowerManager</A><br>
+docs/html/sdk/api_diff/21/changes/classes_index_all.html:780:<A HREF="android.os.PowerManager.WakeLock.html" class="hiddenlink" target="rightframe">PowerManager.WakeLock</A><br>
+docs/html/sdk/api_diff/21/changes/alldiffs_index_changes.html:1378:<!-- Class PowerManager -->
+docs/html/sdk/api_diff/21/changes/alldiffs_index_changes.html:1379:<A HREF="android.os.PowerManager.html" class="hiddenlink" target="rightframe">PowerManager</A><br>
+docs/html/sdk/api_diff/21/changes/alldiffs_index_changes.html:1380:<!-- Class PowerManager.WakeLock -->
+docs/html/sdk/api_diff/21/changes/alldiffs_index_changes.html:1381:<A HREF="android.os.PowerManager.WakeLock.html" class="hiddenlink" target="rightframe">PowerManager.WakeLock</A><br>
+docs/html/sdk/api_diff/21/changes/methods_index_all.html:1240:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.goToSleep_removed(long)" class="hiddenlink" target="rightframe"><strike>goToSleep</strike>
+docs/html/sdk/api_diff/21/changes/methods_index_all.html:1411:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isPowerSaveMode_added()" class="hiddenlink" target="rightframe"><b>isPowerSaveMode</b>
+docs/html/sdk/api_diff/21/changes/methods_index_all.html:1433:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isWakeLockLevelSupported_added(int)" class="hiddenlink" target="rightframe"><b>isWakeLockLevelSupported</b>
+docs/html/sdk/api_diff/21/changes/methods_index_all.html:1949:<nobr><A HREF="android.os.PowerManager.WakeLock.html#android.os.PowerManager.WakeLock.release_added(int)" class="hiddenlink" target="rightframe"><b>release</b>
+docs/html/sdk/api_diff/21/changes/methods_index_all.html:2693:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.userActivity_removed(long, boolean)" class="hiddenlink" target="rightframe"><strike>userActivity</strike>
+docs/html/sdk/api_diff/21/changes/methods_index_all.html:2762:&nbsp;&nbsp;<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.wakeUp_removed(long)" class="hiddenlink" target="rightframe">type&nbsp;<strike>
+docs/html/sdk/api_diff/21/changes/methods_index_all.html:2763:(<code>long</code>)</strike>&nbsp;in&nbsp;android.os.PowerManager
+docs/html/sdk/api_diff/21/changes/alldiffs_index_all.html:185:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.ACTION_POWER_SAVE_MODE_CHANGED" class="hiddenlink" target="rightframe">ACTION_POWER_SAVE_MODE_CHANGED</A>
+docs/html/sdk/api_diff/21/changes/alldiffs_index_all.html:4019:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.goToSleep_removed(long)" class="hiddenlink" target="rightframe"><strike>goToSleep</strike>
+docs/html/sdk/api_diff/21/changes/alldiffs_index_all.html:4496:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isPowerSaveMode_added()" class="hiddenlink" target="rightframe"><b>isPowerSaveMode</b>
+docs/html/sdk/api_diff/21/changes/alldiffs_index_all.html:4529:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isWakeLockLevelSupported_added(int)" class="hiddenlink" target="rightframe"><b>isWakeLockLevelSupported</b>
+docs/html/sdk/api_diff/21/changes/alldiffs_index_all.html:6136:<!-- Class PowerManager -->
+docs/html/sdk/api_diff/21/changes/alldiffs_index_all.html:6137:<A HREF="android.os.PowerManager.html" class="hiddenlink" target="rightframe">PowerManager</A><br>
+docs/html/sdk/api_diff/21/changes/alldiffs_index_all.html:6138:<!-- Class PowerManager.WakeLock -->
+docs/html/sdk/api_diff/21/changes/alldiffs_index_all.html:6139:<A HREF="android.os.PowerManager.WakeLock.html" class="hiddenlink" target="rightframe">PowerManager.WakeLock</A><br>
+docs/html/sdk/api_diff/21/changes/alldiffs_index_all.html:6196:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.PROXIMITY_SCREEN_OFF_WAKE_LOCK" class="hiddenlink" target="rightframe">PROXIMITY_SCREEN_OFF_WAKE_LOCK</A>
+docs/html/sdk/api_diff/21/changes/alldiffs_index_all.html:6441:<nobr><A HREF="android.os.PowerManager.WakeLock.html#android.os.PowerManager.WakeLock.release_added(int)" class="hiddenlink" target="rightframe"><b>release</b>
+docs/html/sdk/api_diff/21/changes/alldiffs_index_all.html:6444:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.RELEASE_FLAG_WAIT_FOR_NO_PROXIMITY" class="hiddenlink" target="rightframe">RELEASE_FLAG_WAIT_FOR_NO_PROXIMITY</A>
+docs/html/sdk/api_diff/21/changes/alldiffs_index_all.html:8540:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.userActivity_removed(long, boolean)" class="hiddenlink" target="rightframe"><strike>userActivity</strike>
+docs/html/sdk/api_diff/21/changes/alldiffs_index_all.html:8735:&nbsp;&nbsp;<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.wakeUp_removed(long)" class="hiddenlink" target="rightframe">type&nbsp;<strike>
+docs/html/sdk/api_diff/21/changes/alldiffs_index_all.html:8736:(<code>long</code>)</strike>&nbsp;in&nbsp;android.os.PowerManager
+docs/html/sdk/api_diff/21/changes/methods_index_additions.html:1231:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isPowerSaveMode_added()" class="hiddenlink" target="rightframe"><b>isPowerSaveMode</b>
+docs/html/sdk/api_diff/21/changes/methods_index_additions.html:1253:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isWakeLockLevelSupported_added(int)" class="hiddenlink" target="rightframe"><b>isWakeLockLevelSupported</b>
+docs/html/sdk/api_diff/21/changes/methods_index_additions.html:1674:<nobr><A HREF="android.os.PowerManager.WakeLock.html#android.os.PowerManager.WakeLock.release_added(int)" class="hiddenlink" target="rightframe"><b>release</b>
+docs/html/sdk/api_diff/21/changes/android.os.PowerManager.WakeLock.html:10:android.os.PowerManager.WakeLock
+docs/html/sdk/api_diff/21/changes/android.os.PowerManager.WakeLock.html:74:Class android.os.<A HREF="../../../../reference/android/os/PowerManager.WakeLock.html" target="_top"><font size="+2"><code>PowerManager.WakeLock</code></font></A>
+docs/html/sdk/api_diff/21/changes/android.os.PowerManager.WakeLock.html:86:  <A NAME="android.os.PowerManager.WakeLock.release_added(int)"></A>
+docs/html/sdk/api_diff/21/changes/android.os.PowerManager.WakeLock.html:87:  <nobr><code>void</code>&nbsp;<A HREF="../../../../reference/android/os/PowerManager.WakeLock.html#release(int)" target="_top"><code>release</code></A>(<code>int</code>)</nobr>
+docs/html/sdk/api_diff/21/changes/classes_index_changes.html:686:<A HREF="android.os.PowerManager.html" class="hiddenlink" target="rightframe">PowerManager</A><br>
+docs/html/sdk/api_diff/21/changes/classes_index_changes.html:687:<A HREF="android.os.PowerManager.WakeLock.html" class="hiddenlink" target="rightframe">PowerManager.WakeLock</A><br>
+docs/html/sdk/api_diff/21/changes/android.os.PowerManager.html:10:android.os.PowerManager
+docs/html/sdk/api_diff/21/changes/android.os.PowerManager.html:74:Class android.os.<A HREF="../../../../reference/android/os/PowerManager.html" target="_top"><font size="+2"><code>PowerManager</code></font></A>
+docs/html/sdk/api_diff/21/changes/android.os.PowerManager.html:86:  <A NAME="android.os.PowerManager.goToSleep_removed(long)"></A>
+docs/html/sdk/api_diff/21/changes/android.os.PowerManager.html:93:  <A NAME="android.os.PowerManager.userActivity_removed(long, boolean)"></A>
+docs/html/sdk/api_diff/21/changes/android.os.PowerManager.html:100:  <A NAME="android.os.PowerManager.wakeUp_removed(long)"></A>
+docs/html/sdk/api_diff/21/changes/android.os.PowerManager.html:115:  <A NAME="android.os.PowerManager.isPowerSaveMode_added()"></A>
+docs/html/sdk/api_diff/21/changes/android.os.PowerManager.html:116:  <nobr><code>boolean</code>&nbsp;<A HREF="../../../../reference/android/os/PowerManager.html#isPowerSaveMode()" target="_top"><code>isPowerSaveMode</code></A>()</nobr>
+docs/html/sdk/api_diff/21/changes/android.os.PowerManager.html:122:  <A NAME="android.os.PowerManager.isWakeLockLevelSupported_added(int)"></A>
+docs/html/sdk/api_diff/21/changes/android.os.PowerManager.html:123:  <nobr><code>boolean</code>&nbsp;<A HREF="../../../../reference/android/os/PowerManager.html#isWakeLockLevelSupported(int)" target="_top"><code>isWakeLockLevelSupported</code></A>(<code>int</code>)</nobr>
+docs/html/sdk/api_diff/21/changes/android.os.PowerManager.html:138:  <A NAME="android.os.PowerManager.ACTION_POWER_SAVE_MODE_CHANGED"></A>
+docs/html/sdk/api_diff/21/changes/android.os.PowerManager.html:139:  <nobr><code>String</code>&nbsp;<A HREF="../../../../reference/android/os/PowerManager.html#ACTION_POWER_SAVE_MODE_CHANGED" target="_top"><code>ACTION_POWER_SAVE_MODE_CHANGED</code></A></nobr>
+docs/html/sdk/api_diff/21/changes/android.os.PowerManager.html:145:  <A NAME="android.os.PowerManager.PROXIMITY_SCREEN_OFF_WAKE_LOCK"></A>
+docs/html/sdk/api_diff/21/changes/android.os.PowerManager.html:146:  <nobr><code>int</code>&nbsp;<A HREF="../../../../reference/android/os/PowerManager.html#PROXIMITY_SCREEN_OFF_WAKE_LOCK" target="_top"><code>PROXIMITY_SCREEN_OFF_WAKE_LOCK</code></A></nobr>
+docs/html/sdk/api_diff/21/changes/android.os.PowerManager.html:152:  <A NAME="android.os.PowerManager.RELEASE_FLAG_WAIT_FOR_NO_PROXIMITY"></A>
+docs/html/sdk/api_diff/21/changes/android.os.PowerManager.html:153:  <nobr><code>int</code>&nbsp;<A HREF="../../../../reference/android/os/PowerManager.html#RELEASE_FLAG_WAIT_FOR_NO_PROXIMITY" target="_top"><code>RELEASE_FLAG_WAIT_FOR_NO_PROXIMITY</code></A></nobr>
+docs/html/sdk/api_diff/21/changes/methods_index_removals.html:155:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.goToSleep_removed(long)" class="hiddenlink" target="rightframe"><strike>goToSleep</strike>
+docs/html/sdk/api_diff/21/changes/methods_index_removals.html:221:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.userActivity_removed(long, boolean)" class="hiddenlink" target="rightframe"><strike>userActivity</strike>
+docs/html/sdk/api_diff/21/changes/methods_index_removals.html:251:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.wakeUp_removed(long)" class="hiddenlink" target="rightframe"><strike>wakeUp</strike>
+docs/html/sdk/api_diff/21/changes/alldiffs_index_removals.html:184:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.goToSleep_removed(long)" class="hiddenlink" target="rightframe"><strike>goToSleep</strike>
+docs/html/sdk/api_diff/21/changes/alldiffs_index_removals.html:281:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.userActivity_removed(long, boolean)" class="hiddenlink" target="rightframe"><strike>userActivity</strike>
+docs/html/sdk/api_diff/21/changes/alldiffs_index_removals.html:315:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.wakeUp_removed(long)" class="hiddenlink" target="rightframe"><strike>wakeUp</strike>
+docs/html/sdk/api_diff/21/changes/alldiffs_index_additions.html:146:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.ACTION_POWER_SAVE_MODE_CHANGED" class="hiddenlink" target="rightframe">ACTION_POWER_SAVE_MODE_CHANGED</A>
+docs/html/sdk/api_diff/21/changes/alldiffs_index_additions.html:3648:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isPowerSaveMode_added()" class="hiddenlink" target="rightframe"><b>isPowerSaveMode</b>
+docs/html/sdk/api_diff/21/changes/alldiffs_index_additions.html:3681:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isWakeLockLevelSupported_added(int)" class="hiddenlink" target="rightframe"><b>isWakeLockLevelSupported</b>
+docs/html/sdk/api_diff/21/changes/alldiffs_index_additions.html:5131:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.PROXIMITY_SCREEN_OFF_WAKE_LOCK" class="hiddenlink" target="rightframe">PROXIMITY_SCREEN_OFF_WAKE_LOCK</A>
+docs/html/sdk/api_diff/21/changes/alldiffs_index_additions.html:5297:<nobr><A HREF="android.os.PowerManager.WakeLock.html#android.os.PowerManager.WakeLock.release_added(int)" class="hiddenlink" target="rightframe"><b>release</b>
+docs/html/sdk/api_diff/21/changes/alldiffs_index_additions.html:5300:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.RELEASE_FLAG_WAIT_FOR_NO_PROXIMITY" class="hiddenlink" target="rightframe">RELEASE_FLAG_WAIT_FOR_NO_PROXIMITY</A>
+docs/html/sdk/api_diff/20/user_comments_for_19_to_20.xml:553:  <identifier id="android.os.PowerManager"/>
+docs/html/sdk/api_diff/20/user_comments_for_19_to_20.xml:559:  <identifier id="android.os.PowerManager.isInteractive_added()"/>
+docs/html/sdk/api_diff/20/user_comments_for_19_to_20.xml:565:  <identifier id="android.os.PowerManager.isScreenOn_changed()"/>
+docs/html/sdk/api_diff/20/missingSinces.txt:33:NO DOC BLOCK: android.os.PowerManager Method isInteractive()
+docs/html/sdk/api_diff/20/changes/pkg_android.os.html:91:  <A NAME="PowerManager"></A>
+docs/html/sdk/api_diff/20/changes/pkg_android.os.html:92:  <nobr><A HREF="android.os.PowerManager.html">PowerManager</A></nobr>
+docs/html/sdk/api_diff/20/changes/methods_index_changes.html:78:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isScreenOn_changed()" class="hiddenlink" target="rightframe">isScreenOn
+docs/html/sdk/api_diff/20/changes/jdiff_statistics.html:230:  <TD><A HREF="android.os.PowerManager.html">
+docs/html/sdk/api_diff/20/changes/jdiff_statistics.html:231:android.os.PowerManager</A></TD>
+docs/html/sdk/api_diff/20/changes/classes_index_all.html:197:<A HREF="android.os.PowerManager.html" class="hiddenlink" target="rightframe">PowerManager</A><br>
+docs/html/sdk/api_diff/20/changes/alldiffs_index_changes.html:224:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isScreenOn_changed()" class="hiddenlink" target="rightframe">isScreenOn
+docs/html/sdk/api_diff/20/changes/alldiffs_index_changes.html:355:<!-- Class PowerManager -->
+docs/html/sdk/api_diff/20/changes/alldiffs_index_changes.html:356:<A HREF="android.os.PowerManager.html" class="hiddenlink" target="rightframe">PowerManager</A><br>
+docs/html/sdk/api_diff/20/changes/methods_index_all.html:218:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isInteractive_added()" class="hiddenlink" target="rightframe"><b>isInteractive</b>
+docs/html/sdk/api_diff/20/changes/methods_index_all.html:220:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isScreenOn_changed()" class="hiddenlink" target="rightframe">isScreenOn
+docs/html/sdk/api_diff/20/changes/alldiffs_index_all.html:407:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isInteractive_added()" class="hiddenlink" target="rightframe"><b>isInteractive</b>
+docs/html/sdk/api_diff/20/changes/alldiffs_index_all.html:410:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isScreenOn_changed()" class="hiddenlink" target="rightframe">isScreenOn
+docs/html/sdk/api_diff/20/changes/alldiffs_index_all.html:628:<!-- Class PowerManager -->
+docs/html/sdk/api_diff/20/changes/alldiffs_index_all.html:629:<A HREF="android.os.PowerManager.html" class="hiddenlink" target="rightframe">PowerManager</A><br>
+docs/html/sdk/api_diff/20/changes/methods_index_additions.html:167:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isInteractive_added()" class="hiddenlink" target="rightframe"><b>isInteractive</b>
+docs/html/sdk/api_diff/20/changes/classes_index_changes.html:192:<A HREF="android.os.PowerManager.html" class="hiddenlink" target="rightframe">PowerManager</A><br>
+docs/html/sdk/api_diff/20/changes/android.os.PowerManager.html:10:android.os.PowerManager
+docs/html/sdk/api_diff/20/changes/android.os.PowerManager.html:74:Class android.os.<A HREF="../../../../reference/android/os/PowerManager.html" target="_top"><font size="+2"><code>PowerManager</code></font></A>
+docs/html/sdk/api_diff/20/changes/android.os.PowerManager.html:86:  <A NAME="android.os.PowerManager.isInteractive_added()"></A>
+docs/html/sdk/api_diff/20/changes/android.os.PowerManager.html:87:  <nobr><code>boolean</code>&nbsp;<A HREF="../../../../reference/android/os/PowerManager.html#isInteractive()" target="_top"><code>isInteractive</code></A>()</nobr>
+docs/html/sdk/api_diff/20/changes/android.os.PowerManager.html:101:  <A NAME="android.os.PowerManager.isScreenOn_changed()"></A>
+docs/html/sdk/api_diff/20/changes/android.os.PowerManager.html:102:  <nobr><code>boolean</code>&nbsp;<A HREF="../../../../reference/android/os/PowerManager.html#isScreenOn()" target="_top"><code>isScreenOn</code></A>()  </nobr>
+docs/html/sdk/api_diff/20/changes/alldiffs_index_additions.html:306:<nobr><A HREF="android.os.PowerManager.html#android.os.PowerManager.isInteractive_added()" class="hiddenlink" target="rightframe"><b>isInteractive</b>
+docs/html/sitemap.txt:1111:http://developer.android.com/reference/android/os/PowerManager.html
+docs/html/sitemap.txt:1112:http://developer.android.com/reference/android/os/PowerManager.WakeLock.html
+docs/html/sitemap.txt:4430:http://developer.android.com/sdk/api_diff/17/changes/android.os.PowerManager.html
+docs/html/sitemap.txt:4460:http://developer.android.com/sdk/api_diff/17/changes/android.os.PowerManager.WakeLock.html
+docs/html/sitemap.txt:4945:http://developer.android.com/sdk/api_diff/9/changes/android.os.PowerManager.WakeLock.html
+docs/html/sitemap.txt:5294:http://developer.android.com/sdk/api_diff/7/changes/android.os.PowerManager.html
+docs/html/sitemap.txt:5698:http://developer.android.com/sdk/api_diff/13/changes/android.os.PowerManager.html
+docs/html/sitemap.txt:6654:http://developer.android.com/sdk/api_diff/8/changes/android.os.PowerManager.html
+docs/html/tools/sdk/tools-notes.jd:1168:              {@link android.os.PowerManager.WakeLock} and manifest issues.</li>
+docs/html/tools/sdk/eclipse-adt.jd:967:            {@link android.os.PowerManager.WakeLock} and manifest issues.</li>
+docs/html/training/scheduling/wakelock.jd:111:to sleep, you can use a {@link android.os.PowerManager} system service feature called
+docs/html/training/scheduling/wakelock.jd:139:PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
+docs/html/training/scheduling/wakelock.jd:140:Wakelock wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
+docs/html/training/scheduling/wakelock.jd:145:{@link android.os.PowerManager.WakeLock#release wakelock.release()}. This releases your
+docs/html/training/scheduling/wakelock.jd:157:{@link android.os.PowerManager#PARTIAL_WAKE_LOCK} for your app. A
+docs/html-intl/intl/ja/preview/behavior-changes.jd:82:<li><a href="{@docRoot}reference/android/os/PowerManager.WakeLock.html">Wake ロック</a> は無視されます。</li>
+docs/html-intl/intl/pt-br/preview/behavior-changes.jd:82:<li><a href="{@docRoot}reference/android/os/PowerManager.WakeLock.html">Bloqueios de soneca</a> s?o ignorados.</li>
+docs/html-intl/intl/zh-tw/preview/behavior-changes.jd:82:<li><a href="{@docRoot}reference/android/os/PowerManager.WakeLock.html">喚醒鎖定</a>會被忽略。</li>
+docs/html-intl/intl/es/preview/behavior-changes.jd:83:<li>Se ignoran los <a href="{@docRoot}reference/android/os/PowerManager.WakeLock.html">Wakelocks</a>.</li>
+docs/html-intl/intl/zh-cn/preview/behavior-changes.jd:82:<li><a href="{@docRoot}reference/android/os/PowerManager.WakeLock.html">唤醒锁</a>会被忽略。</li>
+docs/html-intl/intl/ko/preview/behavior-changes.jd:82:<li><a href="{@docRoot}reference/android/os/PowerManager.WakeLock.html">?? ?? ?? ??</a>? ?????.</li>
+docs/html-intl/intl/ru/preview/behavior-changes.jd:82:<li>Механизмы <a href="{@docRoot}reference/android/os/PowerManage.WakeLock.html">WakeLock</a> игнорируются.</li>
+media/java/android/media/MediaPlayer.java:36:import android.os.PowerManager;
+media/java/android/media/MediaPlayer.java:622:    private PowerManager.WakeLock mWakeLock = null;
+media/java/android/media/MediaPlayer.java:1281:     * The parameter is a combination of {@link android.os.PowerManager} wake flags.
+media/java/android/media/MediaPlayer.java:1288:     * @see android.os.PowerManager
+media/java/android/media/MediaPlayer.java:1300:        PowerManager pm = (PowerManager)context.getSystemService(Context.POWER_SERVICE);
+media/java/android/media/MediaPlayer.java:1301:        mWakeLock = pm.newWakeLock(mode|PowerManager.ON_AFTER_RELEASE, MediaPlayer.class.getName());
+media/java/android/media/AsyncPlayer.java:22:import android.os.PowerManager;
+media/java/android/media/AsyncPlayer.java:132:    private PowerManager.WakeLock mWakeLock;
+media/java/android/media/AsyncPlayer.java:256:        PowerManager pm = (PowerManager)context.getSystemService(Context.POWER_SERVICE);
+media/java/android/media/AsyncPlayer.java:257:        mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, mTag);
+media/tests/MediaFrameworkTest/src/com/android/mediaframeworktest/MediaFrameworkTest.java:27:import android.os.PowerManager;
+media/tests/MediaFrameworkTest/src/com/android/mediaframeworktest/MediaFrameworkTest.java:69:    private PowerManager.WakeLock mWakeLock = null;
+media/tests/MediaFrameworkTest/src/com/android/mediaframeworktest/MediaFrameworkTest.java:96:        PowerManager pm = PowerManager) this.getSystemService(Context.POWER_SERVICE);
+media/tests/MediaFrameworkTest/src/com/android/mediaframeworktest/MediaFrameworkTest.java:97:        mWakeLock = pm.newWakeLock(PowerManager.FULL_WAKE_LOCK, "MediaFrameworkTest");
+packages/PrintSpooler/src/com/android/printspooler/model/NotificationController.java:29:import android.os.PowerManager;
+packages/PrintSpooler/src/com/android/printspooler/model/NotificationController.java:30:import android.os.PowerManager.WakeLock;
+packages/PrintSpooler/src/com/android/printspooler/model/NotificationController.java:326:            PowerManager powerManager = (PowerManager)
+packages/PrintSpooler/src/com/android/printspooler/model/NotificationController.java:328:            final WakeLock wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
+packages/PrintSpooler/src/com/android/printspooler/model/NotificationController.java:365:            PowerManager powerManager = (PowerManager)
+packages/PrintSpooler/src/com/android/printspooler/model/NotificationController.java:367:            final WakeLock wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
+packages/SystemUI/src/com/android/systemui/keyguard/KeyguardViewMediator.java:40:import android.os.PowerManager;
+packages/SystemUI/src/com/android/systemui/keyguard/KeyguardViewMediator.java:197:    private PowerManager mPM;
+packages/SystemUI/src/com/android/systemui/keyguard/KeyguardViewMediator.java:213:    private PowerManager.WakeLock mShowKeyguardWakeLock;
+packages/SystemUI/src/com/android/systemui/keyguard/KeyguardViewMediator.java:570:        mPM = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+packages/SystemUI/src/com/android/systemui/keyguard/KeyguardViewMediator.java:574:        mShowKeyguardWakeLock = mPM.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "show keyguard");
+packages/SystemUI/src/com/android/systemui/doze/DozeService.java:35:import android.os.PowerManager;
+packages/SystemUI/src/com/android/systemui/doze/DozeService.java:79:    private PowerManager mPowerManager;
+packages/SystemUI/src/com/android/systemui/doze/DozeService.java:80:    private PowerManager.WakeLock mWakeLock;
+packages/SystemUI/src/com/android/systemui/doze/DozeService.java:138:        mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+packages/SystemUI/src/com/android/systemui/doze/DozeService.java:139:        mWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
+packages/SystemUI/src/com/android/systemui/media/NotificationPlayer.java:26:import android.os.PowerManager;
+packages/SystemUI/src/com/android/systemui/media/NotificationPlayer.java:253:    private PowerManager.WakeLock mWakeLock;
+packages/SystemUI/src/com/android/systemui/media/NotificationPlayer.java:377:        PowerManager pm = (PowerManager)context.getSystemService(Context.POWER_SERVICE);
+packages/SystemUI/src/com/android/systemui/media/NotificationPlayer.java:378:        mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, mTag);
+packages/SystemUI/src/com/android/systemui/power/PowerUI.java:27:import android.os.PowerManager;
+packages/SystemUI/src/com/android/systemui/power/PowerUI.java:48:    private PowerManager mPowerManager;
+packages/SystemUI/src/com/android/systemui/power/PowerUI.java:61:        mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+packages/SystemUI/src/com/android/systemui/power/PowerUI.java:141:            filter.addAction(PowerManager.ACTION_POWER_SAVE_MODE_CHANGING);
+packages/SystemUI/src/com/android/systemui/power/PowerUI.java:142:            filter.addAction(PowerManager.ACTION_POWER_SAVE_MODE_CHANGED);
+packages/SystemUI/src/com/android/systemui/power/PowerUI.java:213:            } else if (PowerManager.ACTION_POWER_SAVE_MODE_CHANGED.equals(action)) {
+packages/SystemUI/src/com/android/systemui/power/PowerUI.java:215:            } else if (PowerManager.ACTION_POWER_SAVE_MODE_CHANGING.equals(action)) {
+packages/SystemUI/src/com/android/systemui/power/PowerUI.java:216:                setSaverMode(intent.getBooleanExtra(PowerManager.EXTRA_POWER_SAVE_MODE, false));
+packages/SystemUI/src/com/android/systemui/power/PowerNotificationWarnings.java:34:import android.os.PowerManager;
+packages/SystemUI/src/com/android/systemui/power/PowerNotificationWarnings.java:77:    private final PowerManager mPowerMan;
+packages/SystemUI/src/com/android/systemui/power/PowerNotificationWarnings.java:99:        mPowerMan = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+packages/SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBar.java:62:import android.os.PowerManager;
+packages/SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBar.java:897:        PowerManager pm = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+packages/SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBar.java:3963:            PowerManager pm = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+packages/SystemUI/src/com/android/systemui/statusbar/policy/BatteryController.java:24:import android.os.PowerManager;
+packages/SystemUI/src/com/android/systemui/statusbar/policy/BatteryController.java:36:    private final PowerManager mPowerManager;
+packages/SystemUI/src/com/android/systemui/statusbar/policy/BatteryController.java:45:        mPowerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+packages/SystemUI/src/com/android/systemui/statusbar/policy/BatteryController.java:49:        filter.addAction(PowerManager.ACTION_POWER_SAVE_MODE_CHANGED);
+packages/SystemUI/src/com/android/systemui/statusbar/policy/BatteryController.java:50:        filter.addAction(PowerManager.ACTION_POWER_SAVE_MODE_CHANGING);
+packages/SystemUI/src/com/android/systemui/statusbar/policy/BatteryController.java:88:        } else if (action.equals(PowerManager.ACTION_POWER_SAVE_MODE_CHANGED)) {
+packages/SystemUI/src/com/android/systemui/statusbar/policy/BatteryController.java:90:        } else if (action.equals(PowerManager.ACTION_POWER_SAVE_MODE_CHANGING)) {
+packages/SystemUI/src/com/android/systemui/statusbar/policy/BatteryController.java:91:            setPowerSave(intent.getBooleanExtra(PowerManager.EXTRA_POWER_SAVE_MODE, false));
+packages/SystemUI/src/com/android/systemui/statusbar/BaseStatusBar.java:51:import android.os.PowerManager;
+packages/SystemUI/src/com/android/systemui/statusbar/BaseStatusBar.java:197:    PowerManager mPowerManager;
+packages/SystemUI/src/com/android/systemui/statusbar/BaseStatusBar.java:562:        mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+packages/SystemUI/src/com/android/systemui/settings/BrightnessController.java:26:import android.os.PowerManager;
+packages/SystemUI/src/com/android/systemui/settings/BrightnessController.java:148:        PowerManager pm = (PowerManager)context.getSystemService(Context.POWER_SERVICE);
+packages/Keyguard/src/com/android/keyguard/PasswordTextView.java:29:import android.os.PowerManager;
+packages/Keyguard/src/com/android/keyguard/PasswordTextView.java:88:    private PowerManager mPM;
+packages/Keyguard/src/com/android/keyguard/PasswordTextView.java:139:        mPM = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+packages/Keyguard/src/com/android/keyguard/KeyguardUpdateMonitor.java:47:import android.os.PowerManager;
+packages/Keyguard/src/com/android/keyguard/KeyguardUpdateMonitor.java:181:    private PowerManager mPowerManager;
+packages/Keyguard/src/com/android/keyguard/KeyguardUpdateMonitor.java:393:                    PowerManager.PARTIAL_WAKE_LOCK, FINGERPRINT_WAKE_LOCK_NAME);
+packages/Keyguard/src/com/android/keyguard/KeyguardUpdateMonitor.java:652:    private PowerManager.WakeLock mWakeLock;
+packages/Keyguard/src/com/android/keyguard/KeyguardUpdateMonitor.java:819:        mPowerManager = context.getSystemService(PowerManager.class);
+packages/Keyguard/src/com/android/keyguard/EmergencyButton.java:24:import android.os.PowerManager;
+packages/Keyguard/src/com/android/keyguard/EmergencyButton.java:72:    private PowerManager mPowerManager;
+packages/Keyguard/src/com/android/keyguard/EmergencyButton.java:106:        mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+packages/Keyguard/src/com/android/keyguard/EmergencyButton.java:126:        // TODO: implement a shorter timeout once new PowerManager API is ready.
+packages/Keyguard/src/com/android/keyguard/NumPadKey.java:21:import android.os.PowerManager;
+packages/Keyguard/src/com/android/keyguard/NumPadKey.java:42:    private PowerManager mPM;
+packages/Keyguard/src/com/android/keyguard/NumPadKey.java:92:        mPM = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+preloaded-classes:1466:android.os.PowerManager
+preloaded-classes:1467:android.os.PowerManager$WakeLock
+preloaded-classes:1468:android.os.PowerManager$WakeLock$1
+services/net/java/android/net/dhcp/DhcpClient.java:39:import android.os.PowerManager;
+services/devicepolicy/java/com/android/server/devicepolicy/DevicePolicyManagerService.java:77:import android.os.PowerManager;
+services/devicepolicy/java/com/android/server/devicepolicy/DevicePolicyManagerService.java:271:    final PowerManager.WakeLock mWakeLock;
+services/devicepolicy/java/com/android/server/devicepolicy/DevicePolicyManagerService.java:275:    final PowerManager mPowerManager;
+services/devicepolicy/java/com/android/server/devicepolicy/DevicePolicyManagerService.java:1050:        mPowerManager = (PowerManager)context.getSystemService(Context.POWER_SERVICE);
+services/devicepolicy/java/com/android/server/devicepolicy/DevicePolicyManagerService.java:1052:        mWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "DPM");
+services/devicepolicy/java/com/android/server/devicepolicy/DevicePolicyManagerService.java:3092:                    PowerManager.GO_TO_SLEEP_REASON_DEVICE_ADMIN, 0);
+services/backup/java/com/android/server/backup/BackupManagerService.java:69:import android.os.PowerManager;
+services/backup/java/com/android/server/backup/BackupManagerService.java:249:    private PowerManager mPowerManager;
+services/backup/java/com/android/server/backup/BackupManagerService.java:257:    PowerManager.WakeLock mWakelock;
+services/backup/java/com/android/server/backup/BackupManagerService.java:974:        mPowerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+services/backup/java/com/android/server/backup/BackupManagerService.java:1123:        mWakelock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "*backup*");
+services/backup/java/com/android/server/backup/BackupManagerService.java:8679:                    PowerManager.USER_ACTIVITY_EVENT_OTHER,
+services/backup/java/com/android/server/backup/BackupManagerService.java:8776:                    PowerManager.USER_ACTIVITY_EVENT_OTHER,
+services/accessibility/java/com/android/server/accessibility/AccessibilityInputFilter.java:20:import android.os.PowerManager;
+services/accessibility/java/com/android/server/accessibility/AccessibilityInputFilter.java:85:    private final PowerManager mPm;
+services/accessibility/java/com/android/server/accessibility/AccessibilityInputFilter.java:117:        mPm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+services/usage/java/com/android/server/usage/UsageStatsService.java:55:import android.os.PowerManager;
+services/usage/java/com/android/server/usage/UsageStatsService.java:134:    private PowerManager mPowerManager;
+services/usage/java/com/android/server/usage/UsageStatsService.java:185:            deviceStates.addAction(PowerManager.ACTION_DEVICE_IDLE_MODE_CHANGED);
+services/usage/java/com/android/server/usage/UsageStatsService.java:215:            mPowerManager = getContext().getSystemService(PowerManager.class);
+services/usage/java/com/android/server/usage/UsageStatsService.java:254:            } else if (PowerManager.ACTION_DEVICE_IDLE_MODE_CHANGED.equals(action)) {
+services/core/java/com/android/server/ConnectivityService.java:84:import android.os.PowerManager;
+services/core/java/com/android/server/ConnectivityService.java:366:    private PowerManager.WakeLock mNetTransitionWakeLock;
+services/core/java/com/android/server/ConnectivityService.java:370:    private final PowerManager.WakeLock mPendingIntentWakeLock;
+services/core/java/com/android/server/ConnectivityService.java:673:        final PowerManager powerManager = (PowerManager) context.getSystemService(
+services/core/java/com/android/server/ConnectivityService.java:675:        mNetTransitionWakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
+services/core/java/com/android/server/ConnectivityService.java:678:        mPendingIntentWakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
+services/core/java/com/android/server/MicrophoneObserver.java:86:import android.os.PowerManager;
+services/core/java/com/android/server/MicrophoneObserver.java:87:import android.os.PowerManager.WakeLock;
+services/core/java/com/android/server/net/NetworkPolicyManagerService.java:126:import android.os.PowerManager;
+services/core/java/com/android/server/net/NetworkPolicyManagerService.java:478:                PowerManager.ACTION_POWER_SAVE_WHITELIST_CHANGED);
+services/core/java/com/android/server/net/NetworkStatsService.java:99:import android.os.PowerManager;
+services/core/java/com/android/server/net/NetworkStatsService.java:166:    private final PowerManager.WakeLock mWakeLock;
+services/core/java/com/android/server/net/NetworkStatsService.java:269:        final PowerManager powerManager = (PowerManager) context.getSystemService(
+services/core/java/com/android/server/net/NetworkStatsService.java:271:        mWakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
+services/core/java/com/android/server/content/SyncManager.java:66:import android.os.PowerManager;
+services/core/java/com/android/server/content/SyncManager.java:205:    volatile private PowerManager.WakeLock mHandleAlarmWakeLock;
+services/core/java/com/android/server/content/SyncManager.java:206:    volatile private PowerManager.WakeLock mSyncManagerWakeLock;
+services/core/java/com/android/server/content/SyncManager.java:293:    private final PowerManager mPowerManager;
+services/core/java/com/android/server/content/SyncManager.java:481:        intentFilter = new IntentFilter(PowerManager.ACTION_DEVICE_IDLE_MODE_CHANGED);
+services/core/java/com/android/server/content/SyncManager.java:503:        mPowerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/content/SyncManager.java:512:        mHandleAlarmWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
+services/core/java/com/android/server/content/SyncManager.java:521:        mSyncManagerWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
+services/core/java/com/android/server/content/SyncManager.java:1312:        final PowerManager.WakeLock mSyncWakeLock;
+services/core/java/com/android/server/content/SyncManager.java:2106:        private final HashMap<String, PowerManager.WakeLock> mWakeLocks = Maps.newHashMap();
+services/core/java/com/android/server/content/SyncManager.java:2141:        private PowerManager.WakeLock getSyncWakeLock(SyncOperation operation) {
+services/core/java/com/android/server/content/SyncManager.java:2143:            PowerManager.WakeLock wakeLock = mWakeLocks.get(wakeLockKey);
+services/core/java/com/android/server/content/SyncManager.java:2146:                wakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, name);
+services/core/java/com/android/server/LocationManagerService.java:82:import android.os.PowerManager;
+services/core/java/com/android/server/LocationManagerService.java:159:    private PowerManager mPowerManager;
+services/core/java/com/android/server/LocationManagerService.java:250:            mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/LocationManagerService.java:631:        PowerManager.WakeLock mWakeLock;
+services/core/java/com/android/server/LocationManagerService.java:655:            mWakeLock = mPowerManager.newWakeLockPowerManager.PARTIAL_WAKE_LOCK, WAKELOCK_KEY);
+services/core/java/com/android/server/job/JobSchedulerService.java:44:import android.os.PowerManager;
+services/core/java/com/android/server/job/JobSchedulerService.java:129:    PowerManager mPowerManager;
+services/core/java/com/android/server/job/JobSchedulerService.java:165:            } else if (PowerManager.ACTION_DEVICE_IDLE_MODE_CHANGED.equals(intent.getAction())) {
+services/core/java/com/android/server/job/JobSchedulerService.java:342:            userFilter.addAction(PowerManager.ACTION_DEVICE_IDLE_MODE_CHANGED);
+services/core/java/com/android/server/job/JobSchedulerService.java:345:            mPowerManager = (PowerManager)getContext().getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/job/JobServiceContext.java:32:import android.os.PowerManager;
+services/core/java/com/android/server/job/JobServiceContext.java:103:    private PowerManager.WakeLock mWakeLock;
+services/core/java/com/android/server/job/JobServiceContext.java:261:        final PowerManager pm =
+services/core/java/com/android/server/job/JobServiceContext.java:262:                (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/job/JobServiceContext.java:263:        mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, mRunningJob.getTag());
+services/core/java/com/android/server/fingerprint/FingerprintService.java:34:import android.os.PowerManager;
+services/core/java/com/android/server/fingerprint/FingerprintService.java:106:    private PowerManager mPowerManager;
+services/core/java/com/android/server/fingerprint/FingerprintService.java:119:        mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/fingerprint/FingerprintService.java:214:        mPowerManager.userActivity(now, PowerManager.USER_ACTIVITY_EVENT_TOUCH, 0);
+services/core/java/com/android/server/VibratorService.java:30:import android.os.PowerManager;
+services/core/java/com/android/server/VibratorService.java:71:    private final PowerManager.WakeLock mWakeLock;
+services/core/java/com/android/server/VibratorService.java:201:        PowerManager pm = (PowerManager)context.getSystemService(
+services/core/java/com/android/server/VibratorService.java:203:        mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "*vibrator*");
+services/core/java/com/android/server/policy/PhoneWindowManager.java:67:import android.os.PowerManager;
+services/core/java/com/android/server/policy/PhoneWindowManager.java:315:    PowerManager mPowerManager;
+services/core/java/com/android/server/policy/PhoneWindowManager.java:662:    PowerManager.WakeLock mBroadcastWakeLock;
+services/core/java/com/android/server/policy/PhoneWindowManager.java:663:    PowerManager.WakeLock mPowerKeyWakeLock;
+services/core/java/com/android/server/policy/PhoneWindowManager.java:1103:                            PowerManager.GO_TO_SLEEP_REASON_POWER_BUTTON, 0);
+services/core/java/com/android/server/policy/PhoneWindowManager.java:1117:                            PowerManager.GO_TO_SLEEP_REASON_POWER_BUTTON,
+services/core/java/com/android/server/policy/PhoneWindowManager.java:1118:                            PowerManager.GO_TO_SLEEP_FLAG_NO_DOZE);
+services/core/java/com/android/server/policy/PhoneWindowManager.java:1133:                            PowerManager.GO_TO_SLEEP_REASON_POWER_BUTTON,
+services/core/java/com/android/server/policy/PhoneWindowManager.java:1134:                            PowerManager.GO_TO_SLEEP_FLAG_NO_DOZE);
+services/core/java/com/android/server/policy/PhoneWindowManager.java:1178:                                PowerManager.GO_TO_SLEEP_REASON_POWER_BUTTON, 0);
+services/core/java/com/android/server/policy/PhoneWindowManager.java:1236:                       PowerManager.GO_TO_SLEEP_REASON_SLEEP_BUTTON, 0);
+services/core/java/com/android/server/policy/PhoneWindowManager.java:1499:        mPowerManager = (PowerManager)context.getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/policy/PhoneWindowManager.java:1500:        mBroadcastWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
+services/core/java/com/android/server/policy/PhoneWindowManager.java:1502:        mPowerKeyWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
+services/core/java/com/android/server/policy/PhoneWindowManager.java:5588:                                        PowerManager.GO_TO_SLEEP_REASON_POWER_BUTTON, 0);
+services/core/java/com/android/server/policy/PhoneWindowManager.java:6056:    // Called on the PowerManager's Notifier thread.
+services/core/java/com/android/server/policy/PhoneWindowManager.java:6065:    // Called on the PowerManager's Notifier thread.
+services/core/java/com/android/server/policy/PhoneWindowManager.java:6085:    // Called on the PowerManager's Notifier thread.
+services/core/java/com/android/server/policy/PhoneWindowManager.java:6108:    // Called on the PowerManager's Notifier thread.
+services/core/java/com/android/server/policy/PhoneWindowManager.java:6874:                    PowerManager.GO_TO_SLEEP_REASON_LID_SWITCH,
+services/core/java/com/android/server/policy/PhoneWindowManager.java:6875:                    PowerManager.GO_TO_SLEEP_FLAG_NO_DOZE);
+services/core/java/com/android/server/dreams/DreamManagerService.java:40:import android.os.PowerManager;
+services/core/java/com/android/server/dreams/DreamManagerService.java:74:    private final PowerManager mPowerManager;
+services/core/java/com/android/server/dreams/DreamManagerService.java:76:    private final PowerManager.WakeLock mDozeWakeLock;
+services/core/java/com/android/server/dreams/DreamManagerService.java:86:    private int mCurrentDreamDozeScreenBrightness = PowerManager.BRIGHTNESS_DEFAULT;
+services/core/java/com/android/server/dreams/DreamManagerService.java:94:        mPowerManager = (PowerManager)context.getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/dreams/DreamManagerService.java:96:        mDozeWakeLock = mPowerManager.newWakeLock(PowerManager.DOZE_WAKE_LOCK, TAG);
+services/core/java/com/android/server/dreams/DreamManagerService.java:245:                        Display.STATE_UNKNOWN, PowerManager.BRIGHTNESS_DEFAULT);
+services/core/java/com/android/server/dreams/DreamManagerService.java:405:        mCurrentDreamDozeScreenBrightness = PowerManager.BRIGHTNESS_DEFAULT;
+services/core/java/com/android/server/pm/PackageDexOptimizer.java:23:import android.os.PowerManager;
+services/core/java/com/android/server/pm/PackageDexOptimizer.java:56:    private final PowerManager.WakeLock mDexoptWakeLock;
+services/core/java/com/android/server/pm/PackageDexOptimizer.java:61:        PowerManager powerManager = (PowerManager)packageManagerService.mContext.getSystemService(
+services/core/java/com/android/server/pm/PackageDexOptimizer.java:63:        mDexoptWakeLock = powerManager.newWakeLockPowerManager.PARTIAL_WAKE_LOCK, "*dexopt*");
+services/core/java/com/android/server/display/AutomaticBrightnessController.java:32:import android.os.PowerManager;
+services/core/java/com/android/server/display/AutomaticBrightnessController.java:80:            PowerManager.useTwilightAdjustmentFeature();
+services/core/java/com/android/server/display/AutomaticBrightnessController.java:507:                clampScreenBrightness(Math.round(value * PowerManager.BRIGHTNESS_ON));
+services/core/java/com/android/server/display/DisplayPowerState.java:22:import android.os.PowerManager;
+services/core/java/com/android/server/display/DisplayPowerState.java:86:        mScreenBrightness = PowerManager.BRIGHTNESS_ON;
+services/core/java/com/android/server/display/DisplayManagerService.java:43:import android.os.PowerManager;
+services/core/java/com/android/server/display/DisplayManagerService.java:188:    private int mGlobalDisplayBrightness =PowerManager.BRIGHTNESS_DEFAULT;
+services/core/java/com/android/server/display/DisplayManagerService.java:236:        PowerManager pm = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/display/DisplayManagerService.java:339:            brightness = PowerManager.BRIGHTNESS_OFF;
+services/core/java/com/android/server/display/DisplayManagerService.java:341:            brightness = PowerManager.BRIGHTNESS_DEFAULT;
+services/core/java/com/android/server/display/DisplayManagerService.java:342:        } else if (brightness > PowerManager.BRIGHTNESS_ON) {
+services/core/java/com/android/server/display/DisplayManagerService.java:343:            brightness = PowerManager.BRIGHTNESS_ON;
+services/core/java/com/android/server/display/DisplayPowerController.java:36:import android.os.PowerManager;
+services/core/java/com/android/server/display/DisplayPowerController.java:298:        mScreenBrightnessRangeMaximum = PowerManager.BRIGHTNESS_ON;
+services/core/java/com/android/server/display/DisplayPowerController.java:539:        int brightness = PowerManager.BRIGHTNESS_DEFAULT;
+services/core/java/com/android/server/display/DisplayPowerController.java:602:            brightness = PowerManager.BRIGHTNESS_OFF;
+services/core/java/com/android/server/display/DisplayPowerController.java:626:                && brightness != PowerManager.BRIGHTNESS_OFF) {
+services/core/java/com/android/server/display/DisplayPowerController.java:627:            brightness = PowerManager.BRIGHTNESS_ON;
+services/core/java/com/android/server/display/DisplayPowerController.java:1191:        return (float)clampAbsoluteBrightness(value) / PowerManager.BRIGHTNESS_ON;
+services/core/java/com/android/server/display/DisplayPowerController.java:1195:        return MathUtils.constrain(value, PowerManager.BRIGHTNESS_OFF, PowerManager.BRIGHTNESS_ON);
+services/core/java/com/android/server/display/LocalDisplayAdapter.java:29:import android.os.PowerManager;
+services/core/java/com/android/server/display/LocalDisplayAdapter.java:175:        private int mBrightness = PowerManager.BRIGHTNESS_DEFAULT;
+services/core/java/com/android/server/display/LocalDisplayAdapter.java:341:            assert state != Display.STATE_OFF || brightness == PowerManager.BRIGHTNESS_OFF;
+services/core/java/com/android/server/audio/MediaFocusControl.java:52:import android.os.PowerManager;
+services/core/java/com/android/server/audio/MediaFocusControl.java:89:    private final PowerManager.WakeLock mMediaEventWakeLock;
+services/core/java/com/android/server/audio/MediaFocusControl.java:107:        PowerManager pm = (PowerManager)mContext.getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/audio/MediaFocusControl.java:108:        mMediaEventWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "handleMediaEvent");
+services/core/java/com/android/server/audio/MediaFocusControl.java:1085:        PowerManager pm = (PowerManager)mContext.getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/audio/AudioService.java:85:import android.os.PowerManager;
+services/core/java/com/android/server/audio/AudioService.java:556:    private PowerManager.WakeLock mAudioEventWakeLock;
+services/core/java/com/android/server/audio/AudioService.java:601:        PowerManager pm = (PowerManager)context.getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/audio/AudioService.java:602:        mAudioEventWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "handleAudioEvent");
+services/core/java/com/android/server/hdmi/HdmiControlService.java:61:import android.os.PowerManager;
+services/core/java/com/android/server/hdmi/HdmiControlService.java:306:    private PowerManager mPowerManager;
+services/core/java/com/android/server/hdmi/HdmiControlService.java:447:            mPowerManager = (PowerManager) getContext().getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/hdmi/HdmiControlService.java:465:    PowerManager getPowerManager() {
+services/core/java/com/android/server/hdmi/HdmiControlService.java:2015:        mPowerManager.goToSleep(SystemClock.uptimeMillis(), PowerManager.GO_TO_SLEEP_REASON_HDMI, 0);
+services/core/java/com/android/server/hdmi/HdmiCecLocalDevicePlayback.java:22:import android.os.PowerManager;
+services/core/java/com/android/server/hdmi/HdmiCecLocalDevicePlayback.java:23:import android.os.PowerManager.WakeLock;
+services/core/java/com/android/server/hdmi/HdmiCecLocalDevicePlayback.java:382:    // Wrapper interface over PowerManager.WakeLock
+services/core/java/com/android/server/hdmi/HdmiCecLocalDevicePlayback.java:392:            mWakeLock = mService.getPowerManager().newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
+services/core/java/com/android/server/NetworkManagementService.java:68:import android.os.PowerManager;
+services/core/java/com/android/server/NetworkManagementService.java:276:        //PowerManager pm = (PowerManager)context.getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/NetworkManagementService.java:277:        PowerManager.WakeLock wl = null; //pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, NETD_TAG);
+services/core/java/com/android/server/media/MediaSessionService.java:49:import android.os.PowerManager;
+services/core/java/com/android/server/media/MediaSessionService.java:93:    private final PowerManager.WakeLock mMediaEventWakeLock;
+services/core/java/com/android/server/media/MediaSessionService.java:111:        PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/media/MediaSessionService.java:112:        mMediaEventWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "handleMediaEvent");
+services/core/java/com/android/server/media/MediaSessionService.java:1012:            PowerManager pm = (PowerManager) getContext().getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/power/PowerManagerService.java:56:import android.os.PowerManager;
+services/core/java/com/android/server/power/PowerManagerService.java:438:    private int mDozeScreenBrightnessOverrideFromDreamManager = PowerManager.BRIGHTNESS_DEFAULT;
+services/core/java/com/android/server/power/PowerManagerService.java:532:                        now, PowerManager.USER_ACTIVITY_EVENT_OTHER, 0, Process.SYSTEM_UID);
+services/core/java/com/android/server/power/PowerManagerService.java:541:                    goToSleepNoUpdateLocked(now,PowerManager.GO_TO_SLEEP_REASON_APPLICATION, 0, Process.SYSTEM_UID);
+services/core/java/com/android/server/power/PowerManagerService.java:557:            PowerManager pm = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/power/PowerManagerService.java:783:                    Intent intent = new IntentPowerManager.ACTION_POWER_SAVE_MODE_CHANGING)
+services/core/java/com/android/server/power/PowerManagerService.java:784:                            .putExtra(PowerManager.EXTRA_POWER_SAVE_MODE, mLowPowerModeEnabled)
+services/core/java/com/android/server/power/PowerManagerService.java:795:                    intent = new Intent(PowerManager.ACTION_POWER_SAVE_MODE_CHANGED);
+services/core/java/com/android/server/power/PowerManagerService.java:857:        switch (wakeLock.mFlags & PowerManager.WAKE_LOCK_LEVEL_MASK) {
+services/core/java/com/android/server/power/PowerManagerService.java:858:            case PowerManager.FULL_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:859:            case PowerManager.SCREEN_BRIGHT_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:860:            case PowerManager.SCREEN_DIM_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:867:        if ((wakeLock.mFlags & PowerManager.ACQUIRE_CAUSES_WAKEUP) != 0
+services/core/java/com/android/server/power/PowerManagerService.java:901:            if ((flags & PowerManager.RELEASE_FLAG_WAIT_FOR_NO_PROXIMITY) != 0) {
+services/core/java/com/android/server/power/PowerManagerService.java:936:        if ((wakeLock.mFlags & PowerManager.ON_AFTER_RELEASE) != 0
+services/core/java/com/android/server/power/PowerManagerService.java:939:                    PowerManager.USER_ACTIVITY_EVENT_OTHER,
+services/core/java/com/android/server/power/PowerManagerService.java:940:                    PowerManager.USER_ACTIVITY_FLAG_NO_CHANGE_LIGHTS,
+services/core/java/com/android/server/power/PowerManagerService.java:1015:                case PowerManager.PARTIAL_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:1016:                case PowerManager.SCREEN_DIM_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:1017:                case PowerManager.SCREEN_BRIGHT_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:1018:                case PowerManager.FULL_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:1019:                case PowerManager.DOZE_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:1020:                case PowerManager.DRAW_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:1023:                case PowerManager.PROXIMITY_SCREEN_OFF_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:1068:                    || (flags & PowerManager.USER_ACTIVITY_FLAG_INDIRECT) != 0) {
+services/core/java/com/android/server/power/PowerManagerService.java:1072:            if ((flags & PowerManager.USER_ACTIVITY_FLAG_NO_CHANGE_LIGHTS) != 0) {
+services/core/java/com/android/server/power/PowerManagerService.java:1136:                    eventTime, PowerManager.USER_ACTIVITY_EVENT_OTHER, 0, reasonUid);
+services/core/java/com/android/server/power/PowerManagerService.java:1176:                case PowerManager.GO_TO_SLEEP_REASON_DEVICE_ADMIN:
+services/core/java/com/android/server/power/PowerManagerService.java:1180:                case PowerManager.GO_TO_SLEEP_REASON_TIMEOUT:
+services/core/java/com/android/server/power/PowerManagerService.java:1183:                case PowerManager.GO_TO_SLEEP_REASON_LID_SWITCH:
+services/core/java/com/android/server/power/PowerManagerService.java:1186:                case PowerManager.GO_TO_SLEEP_REASON_POWER_BUTTON:
+services/core/java/com/android/server/power/PowerManagerService.java:1189:                case PowerManager.GO_TO_SLEEP_REASON_SLEEP_BUTTON:
+services/core/java/com/android/server/power/PowerManagerService.java:1192:                case PowerManager.GO_TO_SLEEP_REASON_HDMI:
+services/core/java/com/android/server/power/PowerManagerService.java:1197:                    reason = PowerManager.GO_TO_SLEEP_REASON_APPLICATION;
+services/core/java/com/android/server/power/PowerManagerService.java:1216:                switch (wakeLock.mFlags & PowerManager.WAKE_LOCK_LEVEL_MASK) {
+services/core/java/com/android/server/power/PowerManagerService.java:1217:                    case PowerManager.FULL_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:1218:                    case PowerManager.SCREEN_BRIGHT_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:1219:                    case PowerManager.SCREEN_DIM_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:1227:            if ((flags & PowerManager.GO_TO_SLEEP_FLAG_NO_DOZE) != 0) {
+services/core/java/com/android/server/power/PowerManagerService.java:1282:            setWakefulnessLocked(WAKEFULNESS_ASLEEP, PowerManager.GO_TO_SLEEP_REASON_TIMEOUT);
+services/core/java/com/android/server/power/PowerManagerService.java:1558:                        now, PowerManager.USER_ACTIVITY_EVENT_OTHER, 0, Process.SYSTEM_UID);
+services/core/java/com/android/server/power/PowerManagerService.java:1649:                switch (wakeLock.mFlags & PowerManager.WAKE_LOCK_LEVEL_MASK) {
+services/core/java/com/android/server/power/PowerManagerService.java:1650:                    case PowerManager.PARTIAL_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:1656:                    case PowerManager.FULL_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:1659:                    case PowerManager.SCREEN_BRIGHT_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:1662:                    case PowerManager.SCREEN_DIM_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:1665:                    case PowerManager.PROXIMITY_SCREEN_OFF_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:1668:                    case PowerManager.DOZE_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:1671:                    case PowerManager.DRAW_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:1857:                            PowerManager.GO_TO_SLEEP_REASON_TIMEOUT, 0, Process.SYSTEM_UID);
+services/core/java/com/android/server/power/PowerManagerService.java:2006:                            PowerManager.GO_TO_SLEEP_REASON_TIMEOUT, 0, Process.SYSTEM_UID);
+services/core/java/com/android/server/power/PowerManagerService.java:2136:                mDisplayPowerRequest.dozeScreenBrightness = PowerManager.BRIGHTNESS_DEFAULT;
+services/core/java/com/android/server/power/PowerManagerService.java:2175:                        PowerManager.USER_ACTIVITY_EVENT_OTHER, 0, Process.SYSTEM_UID);
+services/core/java/com/android/server/power/PowerManagerService.java:2242:                        PowerManager.USER_ACTIVITY_EVENT_OTHER, 0, Process.SYSTEM_UID);
+services/core/java/com/android/server/power/PowerManagerService.java:2487:        // PowerManager.reboot() is documented not to return so just wait for the inevitable.
+services/core/java/com/android/server/power/PowerManagerService.java:2583:            if ((wakeLock.mFlags & PowerManager.WAKE_LOCK_LEVEL_MASK)
+services/core/java/com/android/server/power/PowerManagerService.java:2584:                    == PowerManager.PARTIAL_WAKE_LOCK) {
+services/core/java/com/android/server/power/PowerManagerService.java:2603:        if ((wakeLock.mFlags & PowerManager.WAKE_LOCK_LEVEL_MASK)
+services/core/java/com/android/server/power/PowerManagerService.java:2604:                == PowerManager.PARTIAL_WAKE_LOCK) {
+services/core/java/com/android/server/power/PowerManagerService.java:2661:                    PowerManager.USER_ACTIVITY_EVENT_OTHER, 0, uid);
+services/core/java/com/android/server/power/PowerManagerService.java:2769:        if (reason.equals(PowerManager.REBOOT_RECOVERY)) {
+services/core/java/com/android/server/power/PowerManagerService.java:3113:            switch (mFlags & PowerManager.WAKE_LOCK_LEVEL_MASK) {
+services/core/java/com/android/server/power/PowerManagerService.java:3114:                case PowerManager.FULL_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:3116:                case PowerManager.SCREEN_BRIGHT_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:3118:                case PowerManager.SCREEN_DIM_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:3120:                case PowerManager.PARTIAL_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:3122:                case PowerManager.PROXIMITY_SCREEN_OFF_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:3124:                case PowerManager.DOZE_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:3126:                case PowerManager.DRAW_WAKE_LOCK:
+services/core/java/com/android/server/power/PowerManagerService.java:3135:            if ((mFlags & PowerManager.ACQUIRE_CAUSES_WAKEUP) != 0) {
+services/core/java/com/android/server/power/PowerManagerService.java:3138:            if ((mFlags & PowerManager.ON_AFTER_RELEASE) != 0) {
+services/core/java/com/android/server/power/PowerManagerService.java:3239:            PowerManager.validateWakeLockParameters(flags, tag);
+services/core/java/com/android/server/power/PowerManagerService.java:3242:            if ((flags & PowerManager.DOZE_WAKE_LOCK) != 0) {
+services/core/java/com/android/server/power/PowerManagerService.java:3341:                        Slog.w(TAG, "Ignoring call to PowerManager.userActivity() because the "
+services/core/java/com/android/server/power/PowerManagerService.java:3480:            if (PowerManager.REBOOT_RECOVERY.equals(reason)) {
+services/core/java/com/android/server/power/PowerManagerService.java:3657:                pw.println("Permission Denial: can't dump PowerManager from from pid="
+services/core/java/com/android/server/power/PowerManagerService.java:3675:            if (screenBrightness < PowerManager.BRIGHTNESS_DEFAULT
+services/core/java/com/android/server/power/PowerManagerService.java:3676:                    || screenBrightness > PowerManager.BRIGHTNESS_ON) {
+services/core/java/com/android/server/power/PowerManagerService.java:3677:                screenBrightness = PowerManager.BRIGHTNESS_DEFAULT;
+services/core/java/com/android/server/power/PowerManagerService.java:3701:            if (screenBrightness < PowerManager.BRIGHTNESS_DEFAULT
+services/core/java/com/android/server/power/PowerManagerService.java:3702:                    || screenBrightness > PowerManager.BRIGHTNESS_ON) {
+services/core/java/com/android/server/power/PowerManagerService.java:3703:                screenBrightness = PowerManager.BRIGHTNESS_DEFAULT;
+services/core/java/com/android/server/power/ShutdownThread.java:36:import android.os.PowerManager;
+services/core/java/com/android/server/power/ShutdownThread.java:110:    private PowerManager mPowerManager;
+services/core/java/com/android/server/power/ShutdownThread.java:111:    private PowerManager.WakeLock mCpuWakeLock;
+services/core/java/com/android/server/power/ShutdownThread.java:112:    private PowerManager.WakeLock mScreenWakeLock;
+services/core/java/com/android/server/power/ShutdownThread.java:263:        if (PowerManager.REBOOT_RECOVERY.equals(mRebootReason)) {
+services/core/java/com/android/server/power/ShutdownThread.java:293:        sInstance.mPowerManager = (PowerManager)context.getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/power/ShutdownThread.java:299:                    PowerManager.PARTIAL_WAKE_LOCK, TAG + "-cpu");
+services/core/java/com/android/server/power/ShutdownThread.java:312:                        PowerManager.FULL_WAKE_LOCK, TAG + "-screen");
+services/core/java/com/android/server/power/Notifier.java:40:import android.os.PowerManager;
+services/core/java/com/android/server/power/Notifier.java:162:                new Intent(PowerManager.ACTION_SCREEN_BRIGHTNESS_BOOST_CHANGED);
+services/core/java/com/android/server/power/Notifier.java:191:                        && (flags & PowerManager.UNIMPORTANT_FOR_LOGGING) != 0;
+services/core/java/com/android/server/power/Notifier.java:228:                    && (newFlags & PowerManager.UNIMPORTANT_FOR_LOGGING) != 0;
+services/core/java/com/android/server/power/Notifier.java:274:        switch (flags & PowerManager.WAKE_LOCK_LEVEL_MASK) {
+services/core/java/com/android/server/power/Notifier.java:275:            case PowerManager.PARTIAL_WAKE_LOCK:
+services/core/java/com/android/server/power/Notifier.java:278:            case PowerManager.SCREEN_DIM_WAKE_LOCK:
+services/core/java/com/android/server/power/Notifier.java:279:            case PowerManager.SCREEN_BRIGHT_WAKE_LOCK:
+services/core/java/com/android/server/power/Notifier.java:282:            case PowerManager.PROXIMITY_SCREEN_OFF_WAKE_LOCK:
+services/core/java/com/android/server/power/Notifier.java:288:            case PowerManager.DRAW_WAKE_LOCK:
+services/core/java/com/android/server/power/Notifier.java:291:            case PowerManager.DOZE_WAKE_LOCK:
+services/core/java/com/android/server/power/Notifier.java:445:            case PowerManager.GO_TO_SLEEP_REASON_DEVICE_ADMIN:
+services/core/java/com/android/server/power/Notifier.java:447:            case PowerManager.GO_TO_SLEEP_REASON_TIMEOUT:
+services/core/java/com/android/server/DockObserver.java:30:import android.os.PowerManager;
+services/core/java/com/android/server/DockObserver.java:54:    private final PowerManager mPowerManager;
+services/core/java/com/android/server/DockObserver.java:55:    private final PowerManager.WakeLock mWakeLock;
+services/core/java/com/android/server/DockObserver.java:73:        mPowerManager = (PowerManager)context.getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/DockObserver.java:74:        mWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
+services/core/java/com/android/server/WiredAccessoryManager.java:23:import android.os.PowerManager;
+services/core/java/com/android/server/WiredAccessoryManager.java:24:import android.os.PowerManager.WakeLock;
+services/core/java/com/android/server/WiredAccessoryManager.java:90:        PowerManager pm = (PowerManager)context.getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/WiredAccessoryManager.java:91:        mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "WiredAccessoryManager");
+services/core/java/com/android/server/UiModeManagerService.java:39:import android.os.PowerManager;
+services/core/java/com/android/server/UiModeManagerService.java:92:    private PowerManager.WakeLock mWakeLock;
+services/core/java/com/android/server/UiModeManagerService.java:161:        final PowerManager powerManager =
+services/core/java/com/android/server/UiModeManagerService.java:162:                (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/UiModeManagerService.java:163:        mWakeLock = powerManager.newWakeLock(PowerManager.FULL_WAKE_LOCK, TAG);
+services/core/java/com/android/server/ConsumerIrService.java:22:import android.os.PowerManager;
+services/core/java/com/android/server/ConsumerIrService.java:37:    private final PowerManager.WakeLock mWakeLock;
+services/core/java/com/android/server/ConsumerIrService.java:43:        PowerManager pm = (PowerManager)context.getSystemService(
+services/core/java/com/android/server/ConsumerIrService.java:45:        mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
+services/core/java/com/android/server/location/GpsLocationProvider.java:62:import android.os.PowerManager;
+services/core/java/com/android/server/location/GpsLocationProvider.java:384:    private final PowerManager.WakeLock mWakeLock;
+services/core/java/com/android/server/location/GpsLocationProvider.java:393:    private final PowerManager mPowerManager;
+services/core/java/com/android/server/location/GpsLocationProvider.java:464:            } else if (PowerManager.ACTION_POWER_SAVE_MODE_CHANGED.equals(action)
+services/core/java/com/android/server/location/GpsLocationProvider.java:465:                    || PowerManager.ACTION_DEVICE_IDLE_MODE_CHANGED.equals(action)
+services/core/java/com/android/server/location/GpsLocationProvider.java:631:        mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/location/GpsLocationProvider.java:632:        mWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, WAKELOCK_KEY);
+services/core/java/com/android/server/location/GpsLocationProvider.java:2048:            intentFilter.addAction(PowerManager.ACTION_POWER_SAVE_MODE_CHANGED);
+services/core/java/com/android/server/location/GpsLocationProvider.java:2049:            intentFilter.addAction(PowerManager.ACTION_DEVICE_IDLE_MODE_CHANGED);
+services/core/java/com/android/server/location/GeofenceManager.java:36:import android.os.PowerManager;
+services/core/java/com/android/server/location/GeofenceManager.java:73:    private final PowerManager.WakeLock mWakeLock;
+services/core/java/com/android/server/location/GeofenceManager.java:113:        PowerManager powerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/location/GeofenceManager.java:114:        mWakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
+services/core/java/com/android/server/NativeDaemonConnector.java:25:import android.os.PowerManager;
+services/core/java/com/android/server/NativeDaemonConnector.java:63:    private final PowerManager.WakeLock mWakeLock;
+services/core/java/com/android/server/NativeDaemonConnector.java:81:            int responseQueueSize, String logTag, int maxLogSize, PowerManager.WakeLock wl) {
+services/core/java/com/android/server/NativeDaemonConnector.java:87:            int responseQueueSize, String logTag, int maxLogSize, PowerManager.WakeLock wl,
+services/core/java/com/android/server/am/ActivityManagerService.java:60:import android.os.PowerManager;
+services/core/java/com/android/server/am/ActivityManagerService.java:1067:    PowerManager.WakeLock mVoiceWakeLock;
+services/core/java/com/android/server/am/ActivityManagerService.java:2411:        PowerManager pm = (PowerManager)mContext.getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/am/ActivityManagerService.java:2412:        mVoiceWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "*voice*");
+services/core/java/com/android/server/am/ActivityManagerService.java:4954:            // PowerManager.reboot() can block for a long time, so ignore ANRs while shutting down.
+services/core/java/com/android/server/am/ActivityStackSupervisor.java:87:import android.os.PowerManager;
+services/core/java/com/android/server/am/ActivityStackSupervisor.java:295:    PowerManager.WakeLock mLaunchingActivity;
+services/core/java/com/android/server/am/ActivityStackSupervisor.java:302:    PowerManager.WakeLock mGoingToSleep;
+services/core/java/com/android/server/am/ActivityStackSupervisor.java:386:        PowerManager pm = (PowerManager)mService.mContext.getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/am/ActivityStackSupervisor.java:387:        mGoingToSleep = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "ActivityManager-Sleep");
+services/core/java/com/android/server/am/ActivityStackSupervisor.java:388:        mLaunchingActivity = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "*launch*");
+services/core/java/com/android/server/AnyMotionDetector.java:25:import android.os.PowerManager;
+services/core/java/com/android/server/AnyMotionDetector.java:89:    private PowerManager.WakeLock mWakeLock;
+services/core/java/com/android/server/AnyMotionDetector.java:108:    public AnyMotionDetector(PowerManager pm, Handler handler, SensorManager sm,
+services/core/java/com/android/server/AnyMotionDetector.java:111:        mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
+services/core/java/com/android/server/DeviceIdleController.java:52:import android.os.PowerManager;
+services/core/java/com/android/server/DeviceIdleController.java:894:                        (PowerManager) getContext().getSystemService(Context.POWER_SERVICE),
+services/core/java/com/android/server/DeviceIdleController.java:907:                mIdleIntent = new Intent(PowerManager.ACTION_DEVICE_IDLE_MODE_CHANGED);
+services/core/java/com/android/server/DeviceIdleController.java:1490:        Intent intent = new Intent(PowerManager.ACTION_POWER_SAVE_WHITELIST_CHANGED);
+services/core/java/com/android/server/DeviceIdleController.java:1496:        Intent intent = new Intent(PowerManager.ACTION_POWER_SAVE_TEMP_WHITELIST_CHANGED);
+services/core/java/com/android/server/CameraObserver.java:86:import android.os.PowerManager;
+services/core/java/com/android/server/CameraObserver.java:87:import android.os.PowerManager.WakeLock;
+services/core/java/com/android/server/AlarmManagerService.java:39:import android.os.PowerManager;
+services/core/java/com/android/server/AlarmManagerService.java:118:    PowerManager.WakeLock mWakeLock;
+services/core/java/com/android/server/AlarmManagerService.java:803:        PowerManager pm = (PowerManager) getContext().getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/AlarmManagerService.java:804:        mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "*alarm*");
+services/core/java/com/android/server/wm/WindowState.java:40:import android.os.PowerManager;
+services/core/java/com/android/server/wm/WindowState.java:374:    PowerManager.WakeLock mDrawLock;
+services/core/java/com/android/server/wm/WindowState.java:1383:                        PowerManager.DRAW_WAKE_LOCK, "Window:" + tag);
+services/core/java/com/android/server/wm/WindowManagerService.java:57:import android.os.PowerManager;
+services/core/java/com/android/server/wm/WindowManagerService.java:532:    private final PowerManager.WakeLock mScreenFrozenLock;
+services/core/java/com/android/server/wm/WindowManagerService.java:644:    PowerManager mPowerManager;
+services/core/java/com/android/server/wm/WindowManagerService.java:658:    PowerManager.WakeLock mHoldingScreenWakeLock;
+services/core/java/com/android/server/wm/WindowManagerService.java:935:        mPowerManager = (PowerManager)context.getSystemService(Context.POWER_SERVICE);
+services/core/java/com/android/server/wm/WindowManagerService.java:951:                PowerManager.PARTIAL_WAKE_LOCK, "SCREEN_FROZEN");
+services/core/java/com/android/server/wm/WindowManagerService.java:986:                PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.ON_AFTER_RELEASE, TAG);
+services/core/java/com/android/server/wm/WindowManagerService.java:10479:        return (int)(value * PowerManager.BRIGHTNESS_ON);
+services/core/java/com/android/server/SystemService.java:60:     * such as the PowerManager or PackageManager.
+services/core/jni/com_android_server_power_PowerManagerService.h:23:#include <powermanager/PowerManager.h>
+services/voiceinteraction/java/com/android/server/voiceinteraction/VoiceInteractionManagerService.java:922:                pw.println("Permission Denial: can't dump PowerManager from from pid="
+services/voiceinteraction/java/com/android/server/voiceinteraction/SoundTriggerHelper.java:34:import android.os.PowerManager;
+services/voiceinteraction/java/com/android/server/voiceinteraction/SoundTriggerHelper.java:73:    private final PowerManager mPowerManager;
+services/voiceinteraction/java/com/android/server/voiceinteraction/SoundTriggerHelper.java:97:        mPowerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+services/voiceinteraction/java/com/android/server/voiceinteraction/SoundTriggerHelper.java:150:                            new IntentFilter(PowerManager.ACTION_POWER_SAVE_MODE_CHANGED));
+services/voiceinteraction/java/com/android/server/voiceinteraction/SoundTriggerHelper.java:555:            if (!PowerManager.ACTION_POWER_SAVE_MODE_CHANGED.equals(intent.getAction())) {
+tests/MusicServiceDemo/src/com/example/android/musicservicedemo/BrowserService.java:44:import android.os.PowerManager;
+tests/StatusBar/src/com/android/statusbartest/ToastTest.java:34:import android.os.PowerManager;
+tests/StatusBar/src/com/android/statusbartest/PowerTest.java:26:import android.os.PowerManager;
+tests/StatusBar/src/com/android/statusbartest/PowerTest.java:35:    PowerManager mPm;
+tests/StatusBar/src/com/android/statusbartest/PowerTest.java:36:    PowerManager.WakeLock mProx;
+tests/StatusBar/src/com/android/statusbartest/PowerTest.java:46:        mPm = (PowerManager)getSystemService("power");
+tests/StatusBar/src/com/android/statusbartest/PowerTest.java:47:        mProx = mPm.newWakeLock(PowerManager.PROXIMITY_SCREEN_OFF_WAKE_LOCK, "PowerTest-prox");
+tests/StatusBar/src/com/android/statusbartest/PowerTest.java:82:                mProx.release(PowerManager.RELEASE_FLAG_WAIT_FOR_NO_PROXIMITY);
+tests/StatusBar/src/com/android/statusbartest/PowerTest.java:103:                        mProx.release(PowerManager.RELEASE_FLAG_WAIT_FOR_NO_PROXIMITY);
+tests/StatusBar/src/com/android/statusbartest/NotificationTestList.java:35:import android.os.PowerManager;
+tests/StatusBar/src/com/android/statusbartest/NotificationTestList.java:89:                PowerManager pm = (PowerManager)NotificationTestList.this.getSystemService(Context.POWER_SERVICE);
+tests/StatusBar/src/com/android/statusbartest/NotificationTestList.java:90:                PowerManager.WakeLock wl = 
+tests/StatusBar/src/com/android/statusbartest/NotificationTestList.java:91:                            pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "sound");
+tests/StatusBar/src/com/android/statusbartest/NotificationTestList.java:871:                PowerManager.WakeLock wl
+tests/StatusBar/src/com/android/statusbartest/NotificationTestList.java:872:                        = ((PowerManager)NotificationTestList.this.getSystemService(Context.POWER_SERVICE))
+tests/StatusBar/src/com/android/statusbartest/NotificationTestList.java:873:                            .newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "crasher");
+tests/StatusBar/src/com/android/statusbartest/TestActivity.java:34:import android.os.PowerManager;
+tests/StatusBar/src/com/android/statusbartest/NotificationBuilderTest.java:46:import android.os.PowerManager;
+tests/BatteryWaster/src/com/android/batterywaster/BatteryWaster.java:26:import android.os.PowerManager;
+tests/BatteryWaster/src/com/android/batterywaster/BatteryWaster.java:42:    PowerManager.WakeLock mPartialWakeLock;
+tests/BatteryWaster/src/com/android/batterywaster/BatteryWaster.java:67:        PowerManager pm = (PowerManager)getSystemService(POWER_SERVICE);
+tests/BatteryWaster/src/com/android/batterywaster/BatteryWaster.java:68:        mPartialWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "BatteryWaster");
+tests/FrameworkPerf/src/com/android/frameworkperf/FrameworkPerfActivity.java:30:import android.os.PowerManager;
+tests/FrameworkPerf/src/com/android/frameworkperf/FrameworkPerfActivity.java:61:    PowerManager.WakeLock mPartialWakeLock;
+tests/FrameworkPerf/src/com/android/frameworkperf/FrameworkPerfActivity.java:205:        PowerManager pm = (PowerManage)getSystemService(POWER_SERVICE);
+tests/FrameworkPerf/src/com/android/frameworkperf/FrameworkPerfActivity.java:206:        mPartialWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Scheduler");
+tests/utils/SleepUtils/WakeLoopService/src/android/test/wakeuploop/WakeUpCall.java:27:import android.os.PowerManager;
+tests/utils/SleepUtils/WakeLoopService/src/android/test/wakeuploop/WakeUpCall.java:28:import android.os.PowerManager.WakeLock;
+tests/utils/SleepUtils/WakeLoopService/src/android/test/wakeuploop/WakeUpCall.java:106:        PowerManager pm = (PowerManager)context.getSystemService(Context.POWER_SERVICE);
+tests/utils/SleepUtils/WakeLoopService/src/android/test/wakeuploop/WakeUpCall.java:108:        WakeLock wl = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK |
+tests/utils/SleepUtils/WakeLoopService/src/android/test/wakeuploop/WakeUpCall.java:109:                PowerManager.ACQUIRE_CAUSES_WAKEUP, LOG_TAG);
+tests/utils/SleepUtils/AlarmService/src/com/android/testing/alarmservice/WakeUpController.java:20:import android.os.PowerManager;
+tests/utils/SleepUtils/AlarmService/src/com/android/testing/alarmservice/WakeUpController.java:21:import android.os.PowerManager.WakeLock;
+tests/utils/SleepUtils/AlarmService/src/com/android/testing/alarmservice/WakeUpController.java:48:            PowerManager pm =
+tests/utils/SleepUtils/AlarmService/src/com/android/testing/alarmservice/WakeUpController.java:49:                    (PowerManager) AlarmService.sContext.getSystemService(Context.POWER_SERVICE);
+tests/utils/SleepUtils/AlarmService/src/com/android/testing/alarmservice/WakeUpController.java:50:            mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "testing-alarmservice");
+tests/DozeTest/src/com/android/dreams/dozetest/DozeTestDream.java:26:import android.os.PowerManager;
+tests/DozeTest/src/com/android/dreams/dozetest/DozeTestDream.java:56:    private PowerManager mPowerManager;
+tests/DozeTest/src/com/android/dreams/dozetest/DozeTestDream.java:57:    private PowerManager.WakeLock mWakeLock;
+tests/DozeTest/src/com/android/dreams/dozetest/DozeTestDream.java:75:        mPowerManager = (PowerManager)getSystemService(Context.POWER_SERVICE);
+tests/DozeTest/src/com/android/dreams/dozetest/DozeTestDream.java:76:        mWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
+tests/ActivityTests/src/com/google/android/test/activity/ActivityTestMain.java:40:import android.os.PowerManager;
+tests/ActivityTests/src/com/google/android/test/activity/ActivityTestMain.java:66:    PowerManager mPower;
+tests/ActivityTests/src/com/google/android/test/activity/ActivityTestMain.java:166:        mPower = getSystemService(PowerManager.class);
+匹配到二进制文件 tools/preload/20080522.compiled
+匹配到二进制文件 tools/preload/20090811.compiled
+匹配到二进制文件 tools/preload/20100223.compiled
+tools/layoutlib/bridge/src/com/android/layoutlib/bridge/android/BridgeContext.java:74:import android.os.PowerManager;
+tools/layoutlib/bridge/src/com/android/layoutlib/bridge/android/BridgeContext.java:552:            return new PowerManager(this, new BridgePowerManager(), new Handler());
+tools/layoutlib/bridge/src/com/android/layoutlib/bridge/android/BridgeContext.java:580:        if (serviceClass.equals(PowerManager.class)) {
+panzq@compile1275:~/348dvb_v3/android/frameworks/base$ 
+###########################################################################PowerManager##############################################################
+api/system-removed.txt:49:  public final class PowerManager {
+api/removed.txt:49:  public final class PowerManager {
+api/current.txt:23427:  public final class PowerManager {
+api/current.txt:23434:    method public android.os.PowerManager.WakeLock newWakeLock(int, java.lang.String);
+api/current.txt:23448:  public final class PowerManager.WakeLock {
+api/system-current.txt:25372:  public final class PowerManager {
+api/system-current.txt:25380:    method public android.os.PowerManager.WakeLock newWakeLock(int, java.lang.String);
+api/system-current.txt:25401:  public final class PowerManager.WakeLock {

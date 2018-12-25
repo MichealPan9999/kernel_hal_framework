@@ -1,0 +1,5 @@
+arm-unknown-gnueabi-4.2.2.tgz
+该交叉编译工具链用来编译Android内核。
+
+3，jdk-1.5.bin 
+编译android 源码时，所需要的java环境。

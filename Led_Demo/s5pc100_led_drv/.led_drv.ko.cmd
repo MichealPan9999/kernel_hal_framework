@@ -1,0 +1,1 @@
+cmd_/home/lht/source/rootfs/s5pc100_led/led_drv.ko := /usr/local/arm/4.2.2-eabi/usr/bin/arm-linux-ld -EL -r   -o /home/lht/source/rootfs/s5pc100_led/led_drv.ko /home/lht/source/rootfs/s5pc100_led/led_drv.o /home/lht/source/rootfs/s5pc100_led/led_drv.mod.o

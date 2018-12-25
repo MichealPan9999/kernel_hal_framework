@@ -1,0 +1,1 @@
+cmd_drivers/hello/hello.ko := aarch64-linux-gnu-ld -EL -fix-cortex-a53-843419 -r  -T /home/panzq/348dvb_v3/kernel/scripts/module-common.lds --build-id  -o drivers/hello/hello.ko drivers/hello/hello.o drivers/hello/hello.mod.o

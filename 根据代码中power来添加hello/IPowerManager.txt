@@ -1,0 +1,69 @@
+
+panzq@compile1275:~/348dvb_v3/android/frameworks/base$ grep -rnw IPowerManager *
+Android.mk:213: core/java/android/os/IPowerManager.aidl \
+cmds/svc/src/com/android/commands/svc/PowerCommand.java:21:import android.os.IPowerManager;
+cmds/svc/src/com/android/commands/svc/PowerCommand.java:49:                IPowerManager pm = IPowerManager.Stub.asInterface(
+cmds/uiautomator/library/testrunner-src/com/android/uiautomator/core/ShellUiAutomatorBridge.java:29:import android.os.IPowerManager;
+cmds/uiautomator/library/testrunner-src/com/android/uiautomator/core/ShellUiAutomatorBridge.java:111:        IPowerManager pm =
+cmds/uiautomator/library/testrunner-src/com/android/uiautomator/core/ShellUiAutomatorBridge.java:112:                IPowerManager.Stub.asInterface(ServiceManager.getService(Context.POWER_SERVICE));
+core/java/com/android/internal/app/ShutdownActivity.java:23:import android.os.IPowerManager;
+core/java/com/android/internal/app/ShutdownActivity.java:46:                IPowerManager pm = IPowerManager.Stub.asInterface(
+core/java/android/os/PowerManager.java:392:    final IPowerManager mService;
+core/java/android/os/PowerManager.java:400:    public PowerManager(Context context, IPowerManager service, Handler handler) {
+core/java/android/os/IPowerManager.aidl:1:/* //device/java/android/android/os/IPowerManager.aidl
+core/java/android/os/IPowerManager.aidl:24:interface IPowerManager
+core/java/android/os/IPowerManager.aidl:27:    // transaction numbers must not change unless IPowerManager.cpp is also updated.
+core/java/android/os/IPermissionController.aidl:1:/* //device/java/android/android/os/IPowerManager.aidl
+core/java/android/app/SystemServiceRegistry.java:89:import android.os.IPowerManager;
+core/java/android/app/SystemServiceRegistry.java:371:                IPowerManager service = IPowerManager.Stub.asInterface(b);
+core/tests/coretests/src/android/os/BrightnessLimit.java:19:import android.os.IPowerManager;
+core/tests/coretests/src/android/os/BrightnessLimit.java:48:        IPowerManager power = IPowerManager.Stub.asInterface(
+packages/SystemUI/src/com/android/systemui/settings/BrightnessController.java:25:import android.os.IPowerManager;
+packages/SystemUI/src/com/android/systemui/settings/BrightnessController.java:54:    private final IPowerManager mPower;
+packages/SystemUI/src/com/android/systemui/settings/BrightnessController.java:154:        mPower = IPowerManager.Stub.asInterface(ServiceManager.getService("power"));
+packages/SettingsProvider/src/com/android/providers/settings/SettingsHelper.java:31:import android.os.IPowerManager;
+packages/SettingsProvider/src/com/android/providers/settings/SettingsHelper.java:284:            IPowerManager power = IPowerManager.Stub.asInterface(
+preloaded-classes:1437:android.os.IPowerManager
+preloaded-classes:1438:android.os.IPowerManager$Stub
+preloaded-classes:1439:android.os.IPowerManager$Stub$Proxy
+services/core/java/com/android/server/net/NetworkPolicyManagerService.java:123:import android.os.IPowerManager;
+services/core/java/com/android/server/net/NetworkPolicyManagerService.java:251:    private final IPowerManager mPowerManager;
+services/core/java/com/android/server/net/NetworkPolicyManagerService.java:327:            IPowerManager powerManager, INetworkStatsService networkStats,
+services/core/java/com/android/server/net/NetworkPolicyManagerService.java:338:            IPowerManager powerManager, INetworkStatsService networkStats,
+services/core/java/com/android/server/Watchdog.java:31:import android.os.IPowerManager;
+services/core/java/com/android/server/Watchdog.java:303:        IPowerManager pms = (IPowerManager)ServiceManager.getService(Context.POWER_SERVICE);
+services/core/java/com/android/server/power/PowerManagerService.java:53:import android.os.IPowerManager;
+services/core/java/com/android/server/power/PowerManagerService.java:3210:    private final class BinderService extendsIPowerManager.Stub {
+services/java/com/android/server/SystemServer.java:34:import android.os.IPowerManager;
+services/java/com/android/server/SystemServer.java:696:                            (IPowerManager)ServiceManager.getService(Context.POWER_SERVICE),
+services/tests/servicestests/src/com/android/server/NetworkPolicyManagerServiceTest.java:71:import android.os.IPowerManager;
+services/tests/servicestests/src/com/android/server/NetworkPolicyManagerServiceTest.java:115:    private IPowerManager mPowerManager;
+services/tests/servicestests/src/com/android/server/NetworkPolicyManagerServiceTest.java:188:        mPowerManager = createMock(IPowerManager.class);
+tests/StatusBar/src/com/android/statusbartest/PowerTest.java:21:import android.os.IPowerManager;
+tests/StatusBar/src/com/android/statusbartest/PowerTest.java:31:    IPowerManager mPowerManager;
+tests/StatusBar/src/com/android/statusbartest/PowerTest.java:45:        mPowerManager = IPowerManager.Stub.asInterface(ServiceManager.getService("power"));
+匹配到二进制文件 tools/preload/20080522.compiled
+匹配到二进制文件 tools/preload/20090811.compiled
+匹配到二进制文件 tools/preload/20100223.compiled
+tools/layoutlib/bridge/src/com/android/layoutlib/bridge/android/BridgePowerManager.java:20:import android.os.IPowerManager;
+tools/layoutlib/bridge/src/com/android/layoutlib/bridge/android/BridgePowerManager.java:25: * Fake implementation of IPowerManager.
+tools/layoutlib/bridge/src/com/android/layoutlib/bridge/android/BridgePowerManager.java:28:public class BridgePowerManager implements IPowerManager {
+panzq@compile1275:~/348dvb_v3/android/frameworks/base$ 
+
+
+
+#############################################################IPowerManager#################################################################################################
+2018年12月24日 21:06:07
+Android.mk:213: core/java/android/os/IPowerManager.aidl \
+
+core/java/android/os/PowerManager.java:392:    final IPowerManager mService;
+core/java/android/os/PowerManager.java:400:    public PowerManager(Context context, IPowerManager service, Handler handler) {
+core/java/android/os/IPowerManager.aidl:1:/* //device/java/android/android/os/IPowerManager.aidl
+core/java/android/os/IPowerManager.aidl:24:interface IPowerManager
+core/java/android/os/IPowerManager.aidl:27:    // transaction numbers must not change unless IPowerManager.cpp is also updated.
+
+services/core/java/com/android/server/power/PowerManagerService.java:53:import android.os.IPowerManager;
+services/core/java/com/android/server/power/PowerManagerService.java:3210:    private final class BinderService extendsIPowerManager.Stub {
+services/java/com/android/server/SystemServer.java:34:import android.os.IPowerManager;
+services/java/com/android/server/SystemServer.java:696:                            (IPowerManager)ServiceManager.getService(Context.POWER_SERVICE),
+######################################################################################################################################

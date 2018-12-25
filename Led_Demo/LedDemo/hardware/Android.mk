@@ -1,0 +1,12 @@
+LOCAL_PATH:= $(call my-dir)
+include $(CLEAR_VARS)
+LOCAL_MODULE := led.default
+LOCAL_PRELINK_MODULE := false
+LOCAL_SHARED_LIBRARIES := liblog
+
+# set shared libary out path
+#TARGET_OUT_SHARED_LIBRARIES:= $(TARGET_OUT)/lib/hw 
+LOCAL_MODULE_PATH :=$(TARGET_OUT_SHARED_LIBRARIES)/hw
+LOCAL_SRC_FILES := led.c
+
+include $(BUILD_SHARED_LIBRARY) 

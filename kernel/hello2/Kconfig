@@ -1,0 +1,7 @@
+config HELLO2  
+
+   tristate "Hello2 driver for panzq"  
+
+   help  
+
+     hello world 2 !  

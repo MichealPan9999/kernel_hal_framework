@@ -1,0 +1,139 @@
+
+panzq@compile1275:~/348dvb_v3/android/frameworks/base$ grep -rnw Power *
+core/java/com/android/internal/os/CameraPowerCalculator.java:21: * Power calculator for the camera subsystem, excluding the flashlight.
+core/java/com/android/internal/os/CameraPowerCalculator.java:23: * Note: Power draw for the flash unit should be included in the FlashlightPowerCalculator.
+core/java/com/android/internal/os/PowerProfile.java:46:     * Power consumption when CPU is in power collapse mode.
+core/java/com/android/internal/os/PowerProfile.java:51:     * Power consumption when CPU is awake (when a wake lock is held).  This
+core/java/com/android/internal/os/PowerProfile.java:60:     * Power consumption when CPU is in power collapse mode.
+core/java/com/android/internal/os/PowerProfile.java:65:     * Power consumption when WiFi driver is scanning for networks.
+core/java/com/android/internal/os/PowerProfile.java:70:     * Power consumption when WiFi driver is on.
+core/java/com/android/internal/os/PowerProfile.java:75:     * Power consumption when WiFi driver is transmitting/receiving.
+core/java/com/android/internal/os/PowerProfile.java:96:     * Power consumption when GPS is on.
+core/java/com/android/internal/os/PowerProfile.java:101:     * Power consumption when Bluetooth driver is on.
+core/java/com/android/internal/os/PowerProfile.java:106:     * Power consumption when Bluetooth driver is transmitting/receiving.
+core/java/com/android/internal/os/PowerProfile.java:111:     * Power consumption when Bluetooth driver gets an AT command.
+core/java/com/android/internal/os/PowerProfile.java:117:     * Power consumption when screen is on, not including the backlight power.
+core/java/com/android/internal/os/PowerProfile.java:122:     * Power consumption when cell radio is on but not on a call.
+core/java/com/android/internal/os/PowerProfile.java:127:     * Power consumption when cell radio is hunting for a signal.
+core/java/com/android/internal/os/PowerProfile.java:132:     * Power consumption when talking on the phone.
+core/java/com/android/internal/os/PowerProfile.java:137:     * Power consumption at full backlight brightness. If the backlight is at
+core/java/com/android/internal/os/PowerProfile.java:143:     * Power consumed by the audio hardware when playing back audio content. This is in addition
+core/java/com/android/internal/os/PowerProfile.java:149:     * Power consumed by any media hardware when playing back video content. This is in addition
+core/java/com/android/internal/os/PowerProfile.java:169:     * Power consumed by wif batched scaning.  Broken down into bins by
+core/java/com/android/internal/os/BatteryStatsImpl.java:3211:                if (DEBUG_HISTORY) Slog.v(TAG, "Power save mode enabled to: "
+core/java/com/android/internal/os/BatteryStatsImpl.java:3216:                if (DEBUG_HISTORY) Slog.v(TAG, "Power save mode disabled to: "
+core/java/com/android/internal/os/BatteryStatsImpl.java:7650:                // Sum the total number of packets so that the Rx Power and Tx Power can
+core/java/com/android/internal/os/BatteryStatsImpl.java:10091:            pr.println("*** Power save mode timer:");
+core/java/com/android/internal/os/FlashlightPowerCalculator.java:21: * Power calculator for the flashlight.
+core/java/android/net/MobileLinkQualityInfo.java:228:     * returns RSRP (Reference Signal Received Power) for LTE network
+core/java/android/provider/Settings.java:5540:         * What happens when the user presses the Power button while in-call
+core/java/android/provider/Settings.java:5543:         * 1 - The Power button turns off the screen and locks the device. (Default behavior)<br/>
+core/java/android/provider/Settings.java:5544:         * 2 - The Power button hangs up the current call.<br/>
+core/java/android/os/BatteryStats.java:3123:                    sb.append("  Power save mode enabled: ");
+core/java/android/os/BatteryStats.java:3439:        sb.append("  WiFi Power drain: ").append(
+core/java/android/os/BatteryStats.java:3477:        sb.append("  Bluetooth Power drain: ").append(BatteryStatsHelper.makemAh(
+core/java/android/os/PowerManagerInternal.java:22: * Power manager local system service interface.
+core/java/android/os/BatteryManager.java:122:    /** Power source is an AC charger. */
+core/java/android/os/BatteryManager.java:124:    /** Power source is a USB port. */
+core/java/android/os/BatteryManager.java:126:    /** Power source is wireless. */
+core/java/android/bluetooth/BluetoothAssignedNumbers.java:966:     * S-Power Electronics Limited.
+core/java/android/hardware/usb/UsbPort.java:66:     * Power role: This USB port can act as a source (provide power).
+core/java/android/hardware/usb/UsbPort.java:71:     * Power role: This USB port can act as a sink (receive power).
+core/java/android/hardware/Sensor.java:791:     * <b>Application Processor Power modes</b> <p>
+core/java/android/view/KeyEvent.java:148:    /** Key code constant: Power key. */
+core/res/res/values-en-rAU/strings.xml:186:    <string name="power_off" msgid="4266614107412865048">"Power off"</string>
+core/res/res/values-en-rAU/strings.xml:210:    <string name="global_action_power_off" msgid="4471879440839879722">"Powe off"</string>
+core/res/res/values/strings.xml:395:    <!-- Power Dialog --> <skip />
+core/res/res/values/strings.xml:411:    <string name="power_off">Power off</string>
+core/res/res/values/strings.xml:482:    <string name="global_action_power_off">Power off</string>
+core/res/res/values/config.xml:724:            2 - Power off (with confirmation)
+core/res/res/values/config.xml:725:            3 - Power off (without confirmation)
+core/res/res/values/config.xml:1047:         For this time after the screen turns on, the Power Manager
+core/res/res/values/config.xml:1559:    <!-- Power Management: Specifies whether to decouple the auto-suspend state of the
+core/res/res/values/config.xml:1579:    <!-- Power Management: Specifies whether to decouple the interactive state of the
+core/res/res/values/config.xml:1969:         "power" = Power off
+core/res/res/values-en-rIN/strings.xml:186:    <string name="power_off" msgid="4266614107412865048">"Power off"</string>
+core/res/res/values-en-rIN/strings.xml:210:    <string name="global_action_power_off" msgid="4471879440839879722">"Powe off"</string>
+core/res/res/values-en-rGB/strings.xml:186:    <string name="power_off" msgid="4266614107412865048">"Power off"</string>
+core/res/res/values-en-rGB/strings.xml:210:    <string name="global_action_power_off" msgid="4471879440839879722">"Powe off"</string>
+docs/html/preview/behavior-changes.jd:13:    <li><a href="#behavior-power">Power-Saving Optimizations</a></li>
+docs/html/preview/behavior-changes.jd:69:<h2 id="behavior-power">Power-Saving Optimizations</h2>
+docs/html/preview/behavior-changes.jd:83:<a href="{@docRoot}preview/features/power-mgmt.html">Power-Saving Optimizations</a>.</p>
+docs/html/preview/features/power-mgmt.jd:1:page.title=Power-Saving Optimizations
+docs/html/preview/preview_toc.cs:109:      Power-Saving Optimizations</a></li>
+docs/html/tools/help/emulator.jd:74:    <td>Power button</td>
+docs/html/tools/devices/emulator.jd:49:          <li><a href="#power">Device Power Characteristics</a></li>
+docs/html/tools/devices/emulator.jd:1216:<h3 id="power">Device Power Characteristics</h3>
+docs/html/training/articles/smp.jd:1888:<dt>The Semantics of Power and ARM Multiprocessor Machine Code</dt>
+docs/html/training/wearables/watch-faces/performance.jd:13:  <li><a href="#SavePower">Follow Best Practices to Save Power</a></li>
+docs/html/training/wearables/watch-faces/performance.jd:142:<h2 id="SavePower">Follow Best Practices to Save Power</h2>
+docs/html/training/wearables/watch-faces/performance.jd:171:see <a href="{@docRoot}about/versions/android-5.0.html#Powe">Project Volta</a>.</p>
+docs/html/about/versions/android-5.0.jd:62:  <li><a href="#Power">Project Volta</a>
+docs/html/about/versions/android-5.0.jd:645:<h2 id="Power">Project Volta</h2>
+docs/html/about/versions/android-5.0-changes.jd:21:  <li><a href="#Power"><a href="#BehaviorWebView">WebView</a></a></li>
+docs/html/about/versions/jelly-bean.jd:1095:<li><strong>Power menu bug reports</strong> &mdash; Adds a new option to the
+docs/html/ndk/reference/group___input.jd:1325:<p>Power key. </p>
+docs/html-intl/intl/ja/about/versions/android-5.0.jd:66:  <li><a href="#Power">Project Volta</a>
+docs/html-intl/intl/ja/about/versions/android-5.0.jd:448:<h2 id="Power">Project Volta</h2>
+docs/html-intl/intl/pt-br/about/versions/android-5.0.jd:66:  <li><a href="#Power">Project Volta</a>
+docs/html-intl/intl/pt-br/about/versions/android-5.0.jd:446:<h2 id="Power">Project Volta</h2>
+docs/html-intl/intl/zh-tw/about/versions/android-5.0.jd:66:  <li><a href="#Power">Project Volta</a>
+docs/html-intl/intl/zh-tw/about/versions/android-5.0.jd:448:<h2 id="Power">Project Volta</h2>
+docs/html-intl/intl/es/about/versions/android-5.0.jd:66:  <li><a href="#Power">Proyecto Volta</a>
+docs/html-intl/intl/es/about/versions/android-5.0.jd:448:<h2 id="Power">Proyecto Volta</h2>
+docs/html-intl/intl/zh-cn/about/versions/android-5.0.jd:66:  <li><a href="#Power">Project Volta</a>
+docs/html-intl/intl/zh-cn/about/versions/android-5.0.jd:450:<h2 id="Power">Project Volta</h2>
+docs/html-intl/intl/ko/about/versions/android-5.0.jd:66:  <li><a href="#Power">???? Volta</a>
+docs/html-intl/intl/ko/about/versions/android-5.0.jd:449:<h2 id="Power">???? Volta</h2>
+docs/html-intl/intl/ru/about/versions/android-5.0.jd:66:  <li><a href="#Power">Project Volta</a>
+docs/html-intl/intl/ru/about/versions/android-5.0.jd:449:<h2 id="Power">Project Volta</h2>
+location/java/com/android/internal/location/ProviderProperties.java:81:     * Power requirement for this provider.
+media/java/android/media/MediaScanner.java:271:        "Power Ballad",
+media/tests/MediaFrameworkTest/AndroidManifest.xml:66:         android:label="Media Power tests InstrumentationRunner">
+media/tests/MediaFrameworkTest/AndroidManifest.xml:71:         android:label="Media Power tests InstrumentationRunner">
+media/tests/MediaFrameworkTest/src/com/android/mediaframeworktest/power/MediaPlayerPowerTest.java:65:    // Power measurment will be done in other application.
+packages/SystemUI/src/com/android/systemui/statusbar/policy/BatteryController.java:106:        if (DEBUG) Log.d(TAG, "Power save is " + (mPowerSave ? "on" : "off"));
+services/devicepolicy/java/com/android/server/devicepolicy/DevicePolicyManagerService.java:3090:            // Power off the display
+services/backup/java/com/android/server/backup/BackupManagerService.java:1122:        // Power management
+services/core/java/com/android/server/net/NetworkPolicyManagerService.java:1948:                fout.println("Power save whitelist (except idle) app ids:");
+services/core/java/com/android/server/net/NetworkPolicyManagerService.java:1962:                fout.println("Power save whitelist app ids:");
+services/core/java/com/android/server/policy/PhoneWindowManager.java:969:                // Pressing Power while there's a ringing incoming
+services/core/java/com/android/server/policy/PhoneWindowManager.java:975:                // Otherwise, if "Power button ends call" is enabled,
+services/core/java/com/android/server/policy/PhoneWindowManager.java:976:                // the Power button will hang up any current active call.
+services/core/java/com/android/server/policy/PhoneWindowManager.java:4376:                    // The navigation bar has Real Ultimate Power.
+services/core/java/com/android/server/policy/PhoneWindowManager.java:4405:                    // The wallpaper also has Real Ultimate Power, but we want to tell
+services/core/java/com/android/server/display/DisplayPowerState.java:254:        pw.println("Display Power State:");
+services/core/java/com/android/server/display/DisplayPowerController.java:1067:            pw.println("Display Power Controller Locked State:");
+services/core/java/com/android/server/display/DisplayPowerController.java:1077:        pw.println("Display Power Controller Configuration:");
+services/core/java/com/android/server/display/DisplayPowerController.java:1098:        pw.println("Display Power Controller Thread State:");
+services/core/java/com/android/server/hdmi/DevicePowerStatusAction.java:36:    // State in which the action is waiting for <Report Power Status>.
+services/core/java/com/android/server/hdmi/HdmiCecMessage.java:199:                return "Give Device Power Status";
+services/core/java/com/android/server/hdmi/HdmiCecMessage.java:201:                return "Report Power Status";
+services/core/java/com/android/server/hdmi/PowerStatusMonitorAction.java:33:    // State that waits for <Report Power Status> once sending <Give Device Power Status>
+services/core/java/com/android/server/hdmi/PowerStatusMonitorAction.java:44:    // Timeout once sending <Give Device Power Status>
+services/core/java/com/android/server/hdmi/PowerStatusMonitorAction.java:49:    // Whenever the action receives <ReportPower Status> from a device,
+services/core/java/com/android/server/hdmi/PowerStatusMonitorAction.java:124:                            // If fails to send <Give Device Power Status>,
+services/core/java/com/android/server/hdmi/HdmiCecMessageBuilder.java:315:     * Build &lt;Give Device Power Status&gt; command.
+services/core/java/com/android/server/hdmi/HdmiCecMessageBuilder.java:326:     * Build &lt;Report Power Status&gt; command.
+services/core/java/com/android/server/hdmi/DeviceSelectAction.java:48:    // State in which we wait for <Report Power Status> to come in response to the command
+services/core/java/com/android/server/hdmi/DeviceSelectAction.java:49:    // <Give Device Power Status> we have sent.
+services/core/java/com/android/server/hdmi/HdmiCecMessageValidator.java:162:        // Messages for the Power Status.
+services/core/java/com/android/server/hdmi/RoutingControlAction.java:48:    // State in which we wait for <Report Power Status> in response to <Give Device Power Status>
+services/core/java/com/android/server/hdmi/RoutingControlAction.java:57:    // Time out in milliseconds used for <Report Power Status>
+services/core/java/com/android/server/hdmi/RoutingControlAction.java:60:    // true if <Give Power Status> should be sent once the new active routing path is determined.
+services/core/java/com/android/server/hdmi/OneTouchPlayAction.java:34:    // State in which the action is waiting for <Report Power Status>. In normal situation
+services/core/java/com/android/server/hdmi/OneTouchPlayAction.java:41:    // For a workaround, we send <Give Device Power Status> commands periodically to make sure
+services/core/java/com/android/server/hdmi/OneTouchPlayAction.java:45:    // The maximum number of times we send <Give Device Power Status> before we give up.
+services/core/java/com/android/server/power/PowerManagerService.java:174:    // Power hints defined in hardware/libhardware/include/hardware/power.h.
+services/core/java/com/android/server/power/PowerManagerService.java:178:    // Power features defined in hardware/libhardware/include/hardware/power.h.
+services/core/java/com/android/server/power/PowerManagerService.java:1472:            Slog.wtf(TAG, "Power manager lock was not held when calling updatePowerStateLocked");
+services/core/java/com/android/server/power/PowerManagerService.java:2798:            pw.println("Power Manager State:");
+services/core/java/com/android/server/power/PowerManagerService.java:2931:            pw.println("Display Power: " + mDisplayPowerCallbacks);
+services/core/java/com/android/server/am/ActivityManagerService.java:17544:     * A thought: SystemUI might also want to get told about this, the Power
+services/java/com/android/server/SystemServer.java:337:        // Power manager needs to be started early because other services need it.
+services/java/com/android/server/SystemServer.java:1075:            reportWtf("making Power Manager Service ready", e);
+telephony/java/android/telephony/NeighboringCellInfo.java:48:     * In UMTS, mRssi is the Level index of CPICH Received Signal Code Power
+tests/BrowserPowerTest/AndroidManifest.xml:26:        <activity android:name="PowerTestActivity" android:label="Power">
+tests/BrowserPowerTest/AndroidManifest.xml:40:        android:label="Test runner for Browser Power Tests."
+匹配到二进制文件 tools/aapt2/data/resources.arsc
+panzq@compile1275:~/348dvb_v3/android/frameworks/base$ 

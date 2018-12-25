@@ -1,0 +1,25 @@
+
+panzq@compile1275:~/348dvb_v3/android/frameworks/base$ grep -rnw PowerManagerService *
+core/java/android/hardware/display/DisplayManagerInternal.java:156:     * the PowerManagerService to focus on the global power state and not
+services/core/java/com/android/server/EventLogTags.logtags:16:# PowerManagerService.java
+services/core/java/com/android/server/power/PowerManagerService.java:97:public final class PowerManagerService extends SystemService
+services/core/java/com/android/server/power/PowerManagerService.java:99:    private static final String TAG = "PowerManagerService";
+services/core/java/com/android/server/power/PowerManagerService.java:490:    public PowerManagerService(Context context) {
+services/core/java/com/android/server/power/PowerManagerService.java:499:            mWakeLockSuspendBlocker = createSuspendBlockerLocked("PowerManagerService.WakeLocks");
+services/core/java/com/android/server/power/PowerManagerService.java:500:            mDisplaySuspendBlocker = createSuspendBlockerLocked("PowerManagerService.Display");
+services/core/java/com/android/server/power/PowerManagerService.java:568:                    mAppOps, createSuspendBlockerLocked("PowerManagerService.Broadcasts"),
+services/core/java/com/android/server/power/PowerManagerService.java:572:                    createSuspendBlockerLocked("PowerManagerService.WirelessChargerDetector"),
+services/core/java/com/android/server/power/PowerManagerService.java:2501:        Thread t = new Thread("PowerManagerService.crash()") {
+services/core/java/com/android/server/power/PowerManagerService.java:3064:            PowerManagerService.this.handleWakeLockDeath(this);
+services/core/java/com/android/server/power/ShutdownThread.java:624:            PowerManagerService.lowLevelReboot(reason);
+services/core/java/com/android/server/power/ShutdownThread.java:645:        PowerManagerService.lowLevelShutdown();
+services/core/jni/com_android_server_power_PowerManagerService.cpp:17:#define LOG_TAG "PowerManagerService-JNI"
+services/core/jni/com_android_server_power_PowerManagerService.cpp:259:    int res = jniRegisterNativeMethods(env, "com/android/server/power/PowerManagerService",
+services/core/jni/com_android_server_power_PowerManagerService.cpp:267:    FIND_CLASS(clazz, "com/android/server/power/PowerManagerService");
+services/java/com/android/server/SystemServer.java:82:import com.android.server.power.PowerManagerService;
+services/java/com/android/server/SystemServer.java:152:    private PowerManagerService mPowerManagerService;
+services/java/com/android/server/SystemServer.java:341:        mPowerManagerService = mSystemServiceManager.startService(PowerManagerService.class);
+匹配到二进制文件 tools/preload/20080522.compiled
+匹配到二进制文件 tools/preload/20090811.compiled
+匹配到二进制文件 tools/preload/20100223.compiled
+panzq@compile1275:~/348dvb_v3/android/frameworks/base$
